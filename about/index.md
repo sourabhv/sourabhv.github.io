@@ -3,4 +3,5 @@ layout: default
 title: About me
 ---
 
-Hi! I am Sourabh Verma
+<h2 class="big mb">About Me</h2>
+
