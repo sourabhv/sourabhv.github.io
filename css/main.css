@@ -1,6 +1,7 @@
 /***** Google Fonts *****/
 
 @import url('http://fonts.googleapis.com/css?family=Lato:400,700|Source+Code+Pro|Comfortaa');
+
 /*
 ****************************************
 -------  Global Resets
@@ -24,6 +25,11 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
 body * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -33,18 +39,9 @@ body * {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  border-bottom: 1px solid #333;
-}
-
-a:visited {
-  color: #333;
-}
+a { text-decoration: none; color: #333;}
+a:hover { border-bottom: 1px solid #333; }
+a:visited { color: #666; }
 
 blockquote {
   padding: 2px 0;
@@ -56,12 +53,21 @@ blockquote p {
   margin: 5px 0;
 }
 
+.left {
+float: left;
+}
+
+.right {
+  float: right;
+}
+
+
 .clear {
   clear: both;
 }
 
 .big {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 1em;
 }
 
@@ -84,8 +90,18 @@ header {
   width: 100%;
 }
 
-header a, header a:hover, header a:visited {
-  color: #333;
+header a,
+header a:hover,
+header a:visited {
+  color: #666;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover {
+  border-bottom: 1px solid #333;
 }
 
 header h1 {
@@ -116,7 +132,17 @@ header nav a {
 #main-content {
   margin: 0 auto;
   padding: 30px 20px;
-  width: 720px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.post a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.post a:hover {
+  border-bottom: 1px solid #2980b9;
 }
 
 .posts {
@@ -133,6 +159,15 @@ header nav a {
 
 .post-title {
   font-family: 'Comfortaa', 'Lato', Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.posts .post-title {
+  text-align: left
+}
+
+.post-title a {
+  color: #333 !important;
 }
 
 .post-date {
@@ -145,6 +180,33 @@ header nav a {
   border-left: 5px solid #eee;
   padding: 5px 0 5px 10px;
 }
+
+/* *********************************************** */
+
+#footer-content {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 720px;
+  width: 100%;
+  font-size: 1em;
+}
+
+footer a,
+footer a:visited {
+  color: #333;
+}
+
+footer p {
+  margin: .2em 0;
+  line-height: 1.6em;
+  height: 1.6em;
+}
+
+footer .right img {
+  margin: 0 5px;
+  margin-bottom: -11px
+}
+
 
 /*
 ****************************************
