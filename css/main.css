@@ -196,6 +196,11 @@ footer a:visited {
   color: #333;
 }
 
+footer a:hover {
+  border: none;
+}
+
+
 footer p {
   margin: .2em 0;
   line-height: 1.6em;
