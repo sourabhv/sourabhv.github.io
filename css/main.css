@@ -1,6 +1,6 @@
 /***** Google Fonts *****/
 
-@import url('http://fonts.googleapis.com/css?Source+Code+Pro');
+@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 @font-face {
   font-family: 'FF Nexus Sans';
@@ -25,6 +25,7 @@ html, body { height: 100%; }
 body {
   font: 18px 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   color: #29363D;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,6 +57,10 @@ float: left;
 
 .clear {
   clear: both;
+}
+
+.nodisplay {
+  display: none;
 }
 
 /*
@@ -244,37 +249,65 @@ font-weight: normal;
 
 /* *********************************************** */
 
-#footer-content {
-  margin: 0 auto;
+#site-footer {
+  margin: 30px auto 0;
   padding: 0 20px;
   max-width: 720px;
   width: 100%;
   font-size: 1em;
 }
 
-footer a,
-footer a:visited {
-  color: #29363D;
+#site-search {
+  margin: 20px 0 0;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: none;
+
 }
 
+#site-search input{
+  margin: 0;
+  padding: 30px 20px;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  border: none;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: left;
+  text-overflow: ellipsis;
+  webkit-appearence: textfeild;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+      -ms-box-sizing: content-box;
+       -o-box-sizing: content-box;
+          box-sizing: content-box;
+
+}
+
+#site-search input:focus {
+  outline: 0;
+}
+
+footer a,
+footer a:visited {
+  color: #0a5;
+  padding: 10px 20px;
+}
 footer a:hover {
   border: none;
 }
 
-footer p {
-  margin: .2em 0;
-  line-height: 1.6em;
-  height: 1.6em;
+#site-footer div {
+  padding: 30px 0;
+  background-color: #f2f4f5;
+  border-top: 1px solid #ccc;
 }
 
-footer .right img {
-  margin: 0 5px;
-  margin-bottom: -11px
-}
-
-.highlight {
-  background-color: #f3f5f7;
-  margin: 30px 0;
+#site-footer div a {
+  display: inline-block;
+  width: 24%;
 }
 
 /*
@@ -282,6 +315,11 @@ footer .right img {
 -------  Posts
 ****************************************
 */
+
+.highlight {
+  background-color: #f3f5f7;
+  margin: 30px 0;
+}
 
 pre {
   padding: 10px ;
@@ -323,7 +361,32 @@ pre.terminal code {
 ****************************************
 */
 
-@media (max-width: 500px) {
+@media (max-width: 730px) {
+  #site-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 690px) {
+  #site-footer div a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 690px) {
+  #site-footer div a {
+    width: 49%;
+    text-align: center;
+  }
+
+  #site-footer div .nodisplay {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
   header {
     height: auto;
   }

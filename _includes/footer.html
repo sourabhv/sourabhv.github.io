@@ -1,14 +1,27 @@
 <footer>
-    <div id="footer-content">
-        <div class="left">
-            <p>Sourabh Verma</p>
+    <div id="site-footer">
+        <form id="site-search">
+            <input type="search" placeholder="Search this website ..." autocomplete="off" name="q" >
+        </form>
+        <div>
+            <a href="/feed.xml">subscribe via rss</a>
+            <a href="mailto:email@sourabhverma.com">send an email</a>
+            <br class="nodisplay">
+            <a href="//github.com/sourabhv">fork on github</a>
+            <a href="//twitter.com/metasourabh">follow on twitter</a>
         </div>
-        <div class="right">
-                <a href="/feed.xml"><img src="/img/rss.png" alt="rss" width="20"></a>
-                <a href="mailto:email@sourabhverma.com" target="_blank"><img src="/img/email.png" alt="Email" width="20"></a>
-                <a href="http://github.com/sourabhv"><img src="/img/github.png" alt="Github" width="20"></a>
-                <a href="http://twitter.com/metasourabh"><img src="/img/twitter.png" alt="Twitter" width="20"></a>
-        </div>
-        <div class="clear"></div>
     </div>
 </footer>
+
+<script>
+    var searchbox = document.getElementById('site-search').getElementsByTagName('input')[0];
+    searchbox.onkeypress = function (e) {
+        e = e || window.event;
+        console.log(e);
+        var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+        if (charCode == 13) {
+            var url = 'https://www.google.com/search?q=' + searchbox.value   + '%20site:www.sourabhverma.com';
+            window.open(url)
+        }
+    }
+</script>
