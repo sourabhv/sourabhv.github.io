@@ -3,6 +3,9 @@ layout: default
 title: About me
 ---
 
-<h2 class="vbig mb">About Me</h2>
+<h1 id="post-title">About Me</h1>
 
-<img src="/img/tardis.png" height="250px" alt="tardis">
+<div id="post-content">
+    <img src="/img/tardis.png" height="250px" alt="tardis">
+</div>
+

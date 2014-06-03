@@ -3,6 +3,8 @@ layout: default
 title: My Projects
 ---
 
-<h2 class="vbig mb">My Projects</h2>
+<h1 id="post-title">My Projects</h1>
 
-Have patience, little one!
+<div id="post-content">
+    <p>Have patience, little one!</p>
+</div>
