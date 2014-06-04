@@ -1,6 +1,11 @@
 /***** Google Fonts *****/
 
-@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro');
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
 
 @font-face {
   font-family: 'FF Nexus Sans';
@@ -157,18 +162,18 @@ header nav a {
 }
 
 .post-title a {
-  font: 36px 'FF Nexus Sans', Helvetica, Arial, sans-serif;
-  color: #29363D !important;
+  font: 30px 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  color: #29363D;
 }
 
 .post-date {
   color: #666;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .post-desc {
   margin: 40px 0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
 }
 
@@ -186,7 +191,7 @@ header nav a {
 
 #post-title {
   margin: 60px 0;
-  font-size: 50px;
+  font-size: 45px;
 }
 
 #post-content h2 {
@@ -197,8 +202,6 @@ header nav a {
 font-size: 25px;
 font-weight: normal;
 }
-
-#post-content
 
 #post-content a {
   color: #0a5;
@@ -292,12 +295,8 @@ pre {
   padding: 10px ;
   border-radius: 3px;
   background-color: #f3f5f7;
-  font-family: 'Source Code Pro', courier,  monospace !important;
+  font-family: 'Source Code Pro', courier,  monospace;
   font-size: 16px;
-}
-
-.post ul, .post ol {
-  margin-left: 1.35em;
 }
 
 code {
@@ -306,8 +305,9 @@ code {
   font-size: 16px;
 }
 
-.post pre code {
+pre code {
   border: none;
+  padding: 0;
 }
 
 /* terminal */
@@ -321,6 +321,7 @@ pre.terminal code {
   background-color: #29363D;
 }
 
+/*------------*/
 
 /*
 ****************************************
@@ -329,6 +330,12 @@ pre.terminal code {
 */
 
 @media (max-width: 730px) {
+  #site-header h1 a {
+    font-size: 30px;
+  }
+  #post-title {
+    font-size: 40px;
+  }
   #site-footer {
     padding-left: 0;
     padding-right: 0;
@@ -361,10 +368,16 @@ pre.terminal code {
     margin: 35px 0;
     height: auto;
     float: none;
-    line-height: 1em;
     text-align: center;
+  }
+  header h1 a {
+    line-height: 35px;
   }
   header nav a {
     line-height: 1em;
+    font-size: 14px;
+  }
+  #post-title {
+    font-size: 35px;
   }
 }
