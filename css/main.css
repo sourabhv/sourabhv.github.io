@@ -325,18 +325,19 @@ footer a:hover {
   margin: 30px 0;
 }
 
-pre {
-  padding: 10px ;
-  border-radius: 3px;
-  background-color: #f3f5f7;
+code, kbd, pre, samp {
   font-family: 'Source Code Pro', courier,  monospace;
   font-size: 14px;
+}
+
+pre {
+  padding: 10px ;
+  background-color: #f3f5f7;
 }
 
 code {
   background-color: #f3f5f7;
   padding: 3px 5px;
-  font-size: 16px;
 }
 
 pre code {
