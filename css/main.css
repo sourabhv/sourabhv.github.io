@@ -330,6 +330,11 @@ code, kbd, pre, samp {
   font-size: 14px;
 }
 
+pre, code {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 pre {
   padding: 10px ;
   background-color: #f3f5f7;
@@ -352,6 +357,7 @@ pre.terminal {
   background-color: #29363D;
   color: #FFF;
   box-shadow: inset 0 0 8px 0 #131F25;
+  border-radius: 3px;
 }
 
 pre.terminal code {
