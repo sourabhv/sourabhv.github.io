@@ -71,28 +71,110 @@ very,bad
 Let's go back in time
 ---------------------
 
-Now suppose you are making a really complex file rename and you wrote an amazing pyp command and you are ready to make the final `mv` command and pass it to shell. But hold on! whay about the original file names? This is where the pyp's history comes in, pyp stores the output of every command separated by pipe and it can be referred to as `history[0]`, `history[1]` ... or `h[0]`, `h[1]` ... etc. There's also a shorthand for original input: `o`. Also, you can use all split keywords like split operations on it like `ou`, `ow`, `omm`, etc for splitting original input on underscore, whitespace, comma.
+Now suppose you are making a really complex file rename and you wrote an amazing pyp command and you are ready to make the final `mv` command and pass it to shell. But hold on! whay about the original file names? Now this is where the pyp's history comes in, pyp stores the output of every command separated by pipe and it can be referred to as `history[0]`, `history[1]` ... or `h[0]`, `h[1]` ... etc (here `h[0]` refers to the original input) . There's also a shorthand for original input: `o`.
 
 <pre class="terminal">
-<span class="d">$</span> ls | pyp "u | (p[1:3] + p[4:5]) | m | 'mv', o, p + '.py'" | sh
+<span class="d">$</span> ls
+this_is_my_awsm_file-dont-touch    this_one_is_for_you-have-fun
+
+<span class="d">$</span> ls | pyp "u | (p[1:3] + p[4:5]) | s | 'mv', o, p + '.py'"
+mv this_is_my_awsm_file-dont-touch  is/my/file-dont-touch.py
+mv this_one_is_for_you-have-fun     one/is/you-have-fun.py
 </pre>
 
-Notice the `(` and `)` around `p[1:3] + p[4:5]`. It is important when you are want join two slices. You can also do something as complex as this:
+You can pass pipe this command to shell (`| sh`) and the `mv` command will take effect. Notice the `(` and `)` around `p[1:3] + p[4:5]`. It is important when you are want join two slices. Simply adding them with `+` won't work.
+
+You can also use all the split/join keywords discussed above directly on the original input by appending them with o. For example, to split the original input on underscore you can do `o.split('_')` or simply `ou`. A few other examples would be `ow`, `omm`, `oa` etc.
 
 <pre class="terminal">
-<span class="d">$</span> ls | pyp "(u[0:3] + m[1:2]) | mm | 'mv', o, p + '.py'" | sh
+<span class="d">$</span> cat foo
+~/Desktop/my_file.txt
+~/Desktop/your_file.txt
+
+<span class="d">$</span> cat foo | pyp "s[-1] | u | m | 'mv', os[-1], p"
+mv my_file.txt    my-file.txt
+mv your_file.txt  your-file.txt
+
+<span class="d">$</span> cat foo | pyp "s[-1] | u | m | 'mv', h[1], p"
+mv my_file.txt    my-file.txt
+mv your_file.txt  your-file.txt
 </pre>
 
-Here we are splitting on 2 different characters, namely underscore and minus. The one split doesn't affect other one, .e., the split `u` and `m` occurs on same input. For input `1_2_3_4-5-6-7` pyp will give `mv 1_2_3_4-5-6-7 1,2,3,5.py`
+You can also do something as complex as this:
 
+<pre class="terminal">
+<span class="d">$</span> ls | pyp "(u[0:3] + m[1:2]) | '\ '.join(p) | 'mv', o, p"
+mv this_is_my_awsm_file-dont-touch  this\ is\ my\ dont
+mv this_one_is_for_you-have-fun     this\ one\ is\ have
+</pre>
 
+Here we are splitting on 2 different characters simultaneously, namely underscore and minus. One split doesn't affect the other one, i.e., the split on `u` and `m` occurs on same input.
+
+Filtering in Pyp
+----------------
+
+Filtering is also very simple in pyp. If any function on `p` returns `True` then the line is kept or else it is eliminated. A few examples would be:
+
+<pre class="terminal">
+<span class="d">$</span> cat foo
+all you need is
+42
+ESCAPE FROM
+th1s cru3l w0r1d
+
+<span class="d">$</span> cat foo | pyp "p.isdigit()"
+42
+
+<span class="d">$</span> cat foo | pyp "p.isupper()"
+ESCAPE FROM
+
+<span class="d">$</span> cat foo | pyp "p.islower()"
+all you need is
+th1s cru3l w0r1d
+</pre>
+
+###To keep or to loose
+
+Pyp also comes with 2 handy functions - `keep('...')` and `loose('...')` which you can use to include or exclude lines which have the specified string. These 2 functions also have 2 shorthands - `k` and `l`.
+
+<pre class="terminal">
+<span class="d">$</span> cat foo
+this will test your patience
+and will power
+for power is everything
+
+<span class="d">$</span> cat foo | pyp "keep('power')"
+and will power
+for power is everything
+
+<span class="d">$</span>  cat foo | pyp "l('will')"
+for power is everything
+</pre>
+
+Math Operations
+---------------
+
+Suppose you have a csv file and you want to change values of some column, say 6th to double of its value. You can do this easily in pyp:
+
+<pre class="terminal">
+<span class="d">$</span> cat foo.csv
+Lorem,ipsum,dolor,sit,amet,5,adipisicing,elit,sed
+tempor,incididunt,ut,labore,et,6,magna,aliqua,Ut
+quis,nostrud,exercitation,ullamco,laboris,14,ut,aliquip,ex
+
+<span class="d">$</span>cat foo.csv | pyp "mm[5] | str(int(p) * 2) | (omm[:5] + [p] + omm[6:]) | mm"
+Lorem,ipsum,dolor,sit,amet,10,adipisicing,elit,sed
+tempor,incididunt,ut,labore,et,12,magna,aliqua,Ut
+quis,nostrud,exercitation,ullamco,laboris,28,ut,aliquip,ex
+</pre>
+
+Here we split the file on comma (`mm`) and get the 6th column and multiply it with 2 (by converting it to int first and the converting back to string). Then we add back the 0-5th and 7-last to last column and join back on comma to get the final csv. Finally you can append `> foo.csv` to redirect the output back into the csv file.
+
+Manipulating the pp list
+------------------------
 
 <!--
-history - history[0], history[1],  history[2]
-
-also history[0] == o as in original
-
-and metachars ow ou os od om omm oa for splitting the original
+p.trim
 
 pp work
     sort()

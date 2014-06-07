@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello World
-description: Ben Kurtovic's first place winner of Ofbuscated Hello world Code Golf
+title: Hello World - Obfuscated
+description: Ben Kurtovic's first place winner of Obfuscated Hello world Code Golf
 ---
 
 > A few months ago, I got first place in this Code Golf contest to create the weirdest obfuscated program that prints the string “Hello world!”. I decided to write up an explanation of how the hell it works. So, here’s the entry, in Python 2.7:
