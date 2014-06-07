@@ -141,9 +141,9 @@ header nav a {
   line-height: 100px;
 }
 
-/* *********************** */
-/* **** Content  Area **** */
-/* *********************** */
+/* ******************************* */
+/* **** Main page: Posts list **** */
+/* ******************************* */
 
 #main-content {
   margin: 0 auto;
@@ -185,13 +185,19 @@ header nav a {
   border-bottom: 1px solid #0a5;
 }
 
-/* *********************** */
-/* ***** Post  Entry ***** */
-/* *********************** */
+/* *************************** */
+/* ***** Post Entry Page ***** */
+/* *************************** */
 
 #post-title {
-  margin: 60px 0;
+  margin: 60px 0 20px;
   font-size: 45px;
+}
+
+#post-date {
+  margin: 20px 0 60px;
+  color: #666;
+  font-size: 16px;
 }
 
 #post-content h2 {
@@ -321,7 +327,7 @@ footer a:hover {
 */
 
 .highlight {
-  background-color: #f3f5f7;
+  background-color: #F7F9FA;
   margin: 30px 0;
 }
 
@@ -337,11 +343,11 @@ pre, code {
 
 pre {
   padding: 10px ;
-  background-color: #f3f5f7;
+  background-color: #F7F9FA;
 }
 
 code {
-  background-color: #f3f5f7;
+  background-color: #F7F9FA;
   padding: 3px 5px;
 }
 
