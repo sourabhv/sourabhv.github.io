@@ -12,6 +12,23 @@ We all use `awk` for complex text-manipulation on our computers. But lets admit 
 
 Yikes! Just look at those slashes and quotes and stuff. But don't worry fellas, I have a surprise for you. Presenting, <em>The Pyed Piper!</em> Commonly known as `pyp`, it is a really simple and readable python based text manipulation command line tool. Let's dig into it, shall we?
 
+Installing pyp
+--------------
+
+There are many ways in which you can install pyp, easiest of which would be by using pip:
+
+<pre class="terminal">
+<span class="d">$</span> pip install pyp
+</pre>
+
+If you don't have pip installed, you can download the script from [here](https://pyp.googlecode.com/files/pyp), make it executable and put it in your `$PATH`
+
+<pre class="terminal">
+<span class="d">$</span> wget https://pyp.googlecode.com/files/pyp
+<span class="d">$</span> chmod +x pyp
+<span class="d">$</span> sudo mv pyp /usr/bin/
+</pre>
+
 p & pp is all we need
 ----------------------
 
@@ -135,7 +152,7 @@ th1s cru3l w0r1d
 
 ###To keep or to loose
 
-Pyp also comes with 2 handy functions - `keep('...')` and `loose('...')` which you can use to include or exclude lines which have the specified string. These 2 functions also have 2 shorthands - `k` and `l`.
+Pyp also comes with 2 handy functions - `keep('str1', 'str2', ...)` and `loose(str1', 'str2', ...)` which you can use to include or exclude lines which have the specified string. These 2 functions also have 2 shorthands - `k` and `l`.
 
 <pre class="terminal">
 <span class="d">$</span> cat foo
@@ -173,19 +190,60 @@ Here we split the file on comma (`mm`) and get the 6th column and multiply it wi
 Manipulating the pp list
 ------------------------
 
-<!--
-p.trim
+To split file on a character other than newline: `pp.delimit(Delimiter)`
 
-pp work
-    sort()
-    uniq()
-    delimit(delimiter)
-    oneline
-    list comprehension for filtering
+<pre class="terminal">
+<span class="d">$</span> echo "foo|bar|test" | pyp "pp.delimit('|')"
+[0]foo
+[1]bar
+[2]test
+</pre>
 
-filtering kept if returned true else loose it
+To Consolidate n consicutive lines in 1: `pp.divide(n)`
 
-p.isdigit()
+<pre class="terminal">
+<span class="d">$</span> echo "foo|bar|test|me|now" | pyp "pp.delimit('|') | pp.divide(3)"
+[0][[0]foo[1]bar[2]test]
+[1][[0]me[1]now]
+</pre>
 
-fp sp fpp spp
--->
+To combine all list elements in one line with whitespace: `pp.oneline()`
+
+<pre class="terminal">
+<span class="d">$</span> echo "foo\nbar\nlorem" | pyp "pp.oneline()"
+foo bar lorem
+</pre>
+
+Regular Expressions in Pyp
+-------------------------
+
+You can also use regular expression ([more here](https://docs.python.org/2/library/re.html)) to filter the input. `rekeep(REGEX)` and `relose(REGEX)` can be used to include and exclude lines that match the `REGEX` pattern. Alternatively you can use `rek(REGEX)` and `rel(REGEX)` as their shorthands. This brings us to our original `awk` example. Let's see how we will do it using `pyp`
+
+<pre class="terminal">
+<span class="d">$</span> cat foo
+http://www.google.com
+http://www.sourabhverma.com
+ftp://ftp.mozilla.com
+https://mail.google.com
+Useless-line-here
+iam://not.reallya.link
+
+<span class="d">$</span> cat foo | pyp "rek('http://')"
+http://www.google.com
+http://www.sourabhverma.com
+
+<span class="d">$</span> cat foo | pyp "rek('http://') | s[2] | d[1:] | d"
+google.com
+sourabhverma.com
+</pre>
+
+Wow! Now isn't that super clean.
+
+---------------
+
+That's it for this post. But there's lot more interesting stuff in pyp. Here are some links for further reading. Thank you for reading. Peace out!
+
+\[3\]: [https://code.google.com/p/pyp/wiki/intro](https://code.google.com/p/pyp/wiki/intro) <br>
+\[2\]: [https://code.google.com/p/pyp/wiki/basic_examples](https://code.google.com/p/pyp/wiki/basic_examples) <br>
+\[1\]: [https://code.google.com/p/pyp/wiki/pyp_manual](https://code.google.com/p/pyp/wiki/pyp_manual)
+
