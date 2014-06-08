@@ -25,6 +25,16 @@
   padding: 0;
 }
 
+::-moz-selection {
+  background-color: #32D784;
+  color: #fff;
+}
+
+::selection {
+  background-color: #32D784;
+  color: #fff;
+}
+
 html, body { height: 100%; }
 
 body {
