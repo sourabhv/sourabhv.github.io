@@ -78,6 +78,18 @@ float: left;
   display: none;
 }
 
+.gray {
+  color: #666;
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.center {
+  text-align: center;
+}
+
 /*
 ****************************************
 -------  Home

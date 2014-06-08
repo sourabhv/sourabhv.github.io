@@ -4,7 +4,7 @@ title: Replace Awk/Sed with The Pyed Piper
 description: Pyed Piper (pyp) is a great command line text manipulation utility build over python
 ---
 
-We all use `awk` for complex text-manipulation on our computers. But lets admit it, awk is not the most readable command out there. I, infact, find it a bit ugly. I mean, just look at it ...
+We all use `awk` for complex text-manipulation. But lets admit it, awk is not the most readable command out there. I, infact, find it a little bit ugly. I mean, just look at it ...
 
 <pre class="terminal">
 <span class="d">$</span> awk -F '|' "$1 ~ /http:\/\// {print $2}" foo
@@ -15,7 +15,7 @@ Yikes! Just look at those slashes and quotes and stuff. But don't worry fellas, 
 Installing pyp
 --------------
 
-There are many ways in which you can install pyp, easiest of which would be by using pip:
+There are many ways of installing `pyp`, easiest of which is by using pip:
 
 <pre class="terminal">
 <span class="d">$</span> pip install pyp
@@ -32,7 +32,7 @@ If you don't have pip installed, you can download the script from [here](https:/
 p & pp is all we need
 ----------------------
 
-To use `pyp`, just pipe (`|`) the output of any command into pyp, just like you would do with any other command. And when in *pyp*, you can refer to each line as `p` or a list of all lines as `pp`. Any operation possible on a *string* can be done on `p` and any operation possible on a *list* can be done on `pp`. You can also chain these operations, just like in python. Let's look at a few example:
+To use `pyp`, just pipe (`|`) the output of any command into pyp, just like you would do with any other command. And when in *pyp*, you can refer to each line as `p` or the list of all lines as `pp`. Any operation possible on a *string* can be done on `p` and any operation possible on a *list* can be done on `pp`. You can also chain these operations, just like in python. Let's look at a few example:
 
 <pre class="terminal">
 <span class="d">$</span> echo "foo is bar" | pyp "p.replace('bar', 'foobar')"
@@ -88,7 +88,7 @@ very,bad
 Let's go back in time
 ---------------------
 
-Now suppose you are making a really complex file rename and you wrote an amazing pyp command and you are ready to make the final `mv` command and pass it to shell. But hold on! whay about the original file names? Now this is where the pyp's history comes in, pyp stores the output of every command separated by pipe and it can be referred to as `history[0]`, `history[1]` ... or `h[0]`, `h[1]` ... etc (here `h[0]` refers to the original input) . There's also a shorthand for original input: `o`.
+Now suppose you are making a really complex file rename and you wrote an amazing pyp command and you are ready to make the final `mv` command and pass it to shell. But hold on! whay about the original file names? Now this is where the pyp's history comes in. Pyp stores the output of every command separated by pipe in a variable called `history` (`h` for short) and it can be referred to as `history[0]`, `history[1]` ... or `h[0]`, `h[1]` ... etc (here `h[0]` refers to the original input).
 
 <pre class="terminal">
 <span class="d">$</span> ls
@@ -99,9 +99,9 @@ mv this_is_my_awsm_file-dont-touch  is/my/file-dont-touch.py
 mv this_one_is_for_you-have-fun     one/is/you-have-fun.py
 </pre>
 
-You can pass pipe this command to shell (`| sh`) and the `mv` command will take effect. Notice the `(` and `)` around `p[1:3] + p[4:5]`. It is important when you are want join two slices. Simply adding them with `+` won't work.
+You can pass pipe this command to shell (`| sh`) and the `mv` command will take effect. Notice the `(` and `)` around `p[1:3] + p[4:5]`. It is important to use parens around slices when you want join them. Simply adding them with `+` won't work.
 
-You can also use all the split/join keywords discussed above directly on the original input by appending them with o. For example, to split the original input on underscore you can do `o.split('_')` or simply `ou`. A few other examples would be `ow`, `omm`, `oa` etc.
+There's also a shorthand for original input: `o`. You can also use all the split/join keywords discussed above directly on the original input by prepending them with `o`. For example, to split the original input on underscore you can do `o.split('_')` or simply `ou`. A few other examples would be `ow`, `omm`, `oa` etc.
 
 <pre class="terminal">
 <span class="d">$</span> cat foo
@@ -115,6 +115,10 @@ mv your_file.txt  your-file.txt
 <span class="d">$</span> cat foo | pyp "s[-1] | u | m | 'mv', h[1], p"
 mv my_file.txt    my-file.txt
 mv your_file.txt  your-file.txt
+
+<span class="d">$</span> cat foo | pyp "s[-1] | u | m | 'mv', o, '/'.join(os[:-1]) + '/' + p"
+mv ~/Desktop/my_file.txt ~/Desktop/my-file.txt
+mv ~/Desktop/your_file.txt ~/Desktop/your-file.txt
 </pre>
 
 You can also do something as complex as this:
@@ -152,7 +156,7 @@ th1s cru3l w0r1d
 
 ###To keep or to loose
 
-Pyp also comes with 2 handy functions - `keep('str1', 'str2', ...)` and `loose(str1', 'str2', ...)` which you can use to include or exclude lines which have the specified string. These 2 functions also have 2 shorthands - `k` and `l`.
+Pyp also comes with 2 handy functions - `keep('str1', 'str2', ...)` (shorthand: `k`) and `loose('str1', 'str2', ...)` (shorthand: `l`) which you can use to include or exclude lines which have the specified string.
 
 <pre class="terminal">
 <span class="d">$</span> cat foo
@@ -171,7 +175,7 @@ for power is everything
 Math Operations
 ---------------
 
-Suppose you have a csv file and you want to change values of some column, say 6th to double of its value. You can do this easily in pyp:
+Suppose you have a csv file and you want to change values of a column, say 6th, to double of its value. You can do this easily in pyp:
 
 <pre class="terminal">
 <span class="d">$</span> cat foo.csv
@@ -185,7 +189,7 @@ tempor,incididunt,ut,labore,et,12,magna,aliqua,Ut
 quis,nostrud,exercitation,ullamco,laboris,28,ut,aliquip,ex
 </pre>
 
-Here we split the file on comma (`mm`) and get the 6th column and multiply it with 2 (by converting it to int first and the converting back to string). Then we add back the 0-5th and 7-last to last column and join back on comma to get the final csv. Finally you can append `> foo.csv` to redirect the output back into the csv file.
+Here we split the file on comma (`mm`), get the 6th column and multiply it with 2 (by converting it to *int* first and the converting back to *string*). Then we add back the 0 to 5th and 7th to last column and join back on comma to get the required csv. Finally you can append `> foo.csv` to redirect the output back into the csv file.
 
 Manipulating the pp list
 ------------------------
@@ -207,6 +211,8 @@ To Consolidate n consicutive lines in 1: `pp.divide(n)`
 [1][[0]me[1]now]
 </pre>
 
+Here `[0][[0]foo[1]bar[2]test]` is a line in list `pp` and `[0]foo[1]bar[2]test` is similar to what you get after a split. You can append `| w` to the command to join on space and it will give you `foo bar test`.
+
 To combine all list elements in one line with whitespace: `pp.oneline()`
 
 <pre class="terminal">
@@ -217,33 +223,32 @@ foo bar lorem
 Regular Expressions in Pyp
 -------------------------
 
-You can also use regular expression ([more here](https://docs.python.org/2/library/re.html)) to filter the input. `rekeep(REGEX)` and `relose(REGEX)` can be used to include and exclude lines that match the `REGEX` pattern. Alternatively you can use `rek(REGEX)` and `rel(REGEX)` as their shorthands. This brings us to our original `awk` example. Let's see how we will do it using `pyp`
+You can also use regular expression ([more here](https://docs.python.org/2/library/re.html)) to filter the input. `rekeep(REGEX)` and `relose(REGEX)` can be used to include and exclude the lines that match the `REGEX` pattern. Alternatively you can use `rek(REGEX)` and `rel(REGEX)` as their shorthands. This brings us to our original `awk` example. Let's see how we will do it using `pyp`
 
 <pre class="terminal">
 <span class="d">$</span> cat foo
-http://www.google.com
-http://www.sourabhverma.com
-ftp://ftp.mozilla.com
-https://mail.google.com
-Useless-line-here
-iam://not.reallya.link
+http://www.google.com/loon
+http://www.sourabhverma.com/blob
+ftp://ftp.mozilla.com/ffx
+https://mail.google.com/shhh
+useless://line-here.yep/ignore/it
+iam://not.reallya.link/YOUDONTSAY
 
-<span class="d">$</span> cat foo | pyp "rek('http://')"
-http://www.google.com
-http://www.sourabhverma.com
+<span class="d">$</span> cat foo | pyp "rek('^http://')"
+http://www.google.com/loon
+http://www.sourabhverma.com/blob
 
-<span class="d">$</span> cat foo | pyp "rek('http://') | s[2] | d[1:] | d"
-google.com
-sourabhverma.com
+<span class="d">$</span> cat foo | pyp "rek('http://') | s[2:] | s | d[1:] | d"
+google.com/loon
+sourabhverma.com/blob
 </pre>
 
-Wow! Now isn't that super clean.
+Wow! Now isn't that super clean. Much better than `awk` if you ask me.
 
 ---------------
 
-That's it for this post. But there's lot more interesting stuff in pyp. Here are some links for further reading. Thank you for reading. Peace out!
+That's it for this post. But there's lot more interesting stuff in pyp. Here are some links for further reading. Thank you and Peace out!
 
-\[3\]: [https://code.google.com/p/pyp/wiki/intro](https://code.google.com/p/pyp/wiki/intro) <br>
+\[1\]: [https://code.google.com/p/pyp/wiki/intro](https://code.google.com/p/pyp/wiki/intro) <br>
 \[2\]: [https://code.google.com/p/pyp/wiki/basic_examples](https://code.google.com/p/pyp/wiki/basic_examples) <br>
-\[1\]: [https://code.google.com/p/pyp/wiki/pyp_manual](https://code.google.com/p/pyp/wiki/pyp_manual)
-
+\[3\]: [https://code.google.com/p/pyp/wiki/pyp_manual](https://code.google.com/p/pyp/wiki/pyp_manual)
