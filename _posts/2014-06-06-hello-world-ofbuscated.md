@@ -6,6 +6,10 @@ description: Ben Kurtovic's first place winner of Obfuscated Hello world Code Go
 
 > A few months ago, I got first place in this Code Golf contest to create the weirdest obfuscated program that prints the string “Hello world!”. I decided to write up an explanation of how the hell it works. So, here’s the entry, in Python 2.7:
 
+<p class="right gray">- Ben Kurtovic</p>
+
+<div class="clear"></div>
+
 And here's the code:
 
 {% highlight python %}
