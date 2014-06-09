@@ -154,9 +154,9 @@ all you need is
 th1s cru3l w0r1d
 </pre>
 
-###To keep or to loose
+###To keep or to lose
 
-Pyp also comes with 2 handy functions - `keep('str1', 'str2', ...)` (shorthand: `k`) and `loose('str1', 'str2', ...)` (shorthand: `l`) which you can use to include or exclude lines which have the specified string.
+Pyp also comes with 2 handy functions - `keep('str1', 'str2', ...)` (shorthand: `k`) and `lose('str1', 'str2', ...)` (shorthand: `l`) which you can use to include or exclude lines which have the specified string.
 
 <pre class="terminal">
 <span class="d">$</span> cat foo
