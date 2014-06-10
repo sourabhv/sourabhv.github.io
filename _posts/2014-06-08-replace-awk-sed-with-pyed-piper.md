@@ -183,7 +183,7 @@ Lorem,ipsum,dolor,sit,amet,5,adipisicing,elit,sed
 tempor,incididunt,ut,labore,et,6,magna,aliqua,Ut
 quis,nostrud,exercitation,ullamco,laboris,14,ut,aliquip,ex
 
-<span class="d">$</span>cat foo.csv | pyp "mm[5] | str(int(p) * 2) | (omm[:5] + [p] + omm[6:]) | mm"
+<span class="d">$</span> cat foo.csv | pyp "mm[5] | str(int(p) * 2) | (omm[:5] + [p] + omm[6:]) | mm"
 Lorem,ipsum,dolor,sit,amet,10,adipisicing,elit,sed
 tempor,incididunt,ut,labore,et,12,magna,aliqua,Ut
 quis,nostrud,exercitation,ullamco,laboris,28,ut,aliquip,ex
