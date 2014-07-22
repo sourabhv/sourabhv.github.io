@@ -11,7 +11,7 @@ We usually use `def` to define a new function. Some of you might have heard of `
 A Gist of Lambda Functions
 --------------------------
 
-General syntax of lambda functions is: `lamnda [par1[, par2[, par2 ...]]] : [body]`. The parameters length can be 0 or more. The body cannot be empty. Example:
+General syntax of lambda functions is: `lambda [par1[, par2[, par2 ...]]] : [body]`. The parameters length can be 0 or more. The body cannot be empty. Example:
 
 {% highlight python %}
 >>> hello = lambda word: 'Hello ' + word
