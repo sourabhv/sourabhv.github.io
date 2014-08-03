@@ -261,7 +261,15 @@ font-weight: normal;
 }
 
 #post-content blockquote p {
-  margin: 0;
+  margin: 10px 0;
+  color: #aaa;
+}
+#post-content blockquote p:first-child {
+  margin-top: 0;
+}
+
+#post-content blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 #post-content ul, ol {
