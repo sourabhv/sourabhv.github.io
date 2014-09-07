@@ -16,7 +16,7 @@ def end_of_the_world():
     print('No, not really')
 
 end_of_the_world()
-#>>> 'No, not really'
+>>> 'No, not really'
 {% endhighlight %}
 
 Simple, right? Lets move on.
@@ -41,12 +41,14 @@ try:
     print('!In foo -> bop: %s' % bop) # 4
 except NameError:
     print('Bop not found')
+{% endhighlight %}
 
-#>>> In foo -> bop = bop!
-#>>> In foo -> bop = Bopped!
-#>>> In foo -> zap = Zapped!
-#>>> !In foo -> zap: I zap you!
-#>>> Bop not found
+{% highlight text %}
+>>> In foo -> bop = bop!
+>>> In foo -> bop = Bopped!
+>>> In foo -> zap = Zapped!
+>>> !In foo -> zap: I zap you!
+>>> Bop not found
 {% endhighlight %}
 
 At #1, a new local variable called `zap` is created with value `'Zapped!'`. Then at #2 that local variable is accessed. At #3 the global `zap` variable is accessed as the `zap` in `foo()` is not in the scope (also, it doesn't exist anymore). Then at #4 python fails to find `bop` in scope and gives `NameError`.
@@ -58,15 +60,15 @@ In python, functions are first class citizens. This means that the rules that ap
 
 {% highlight python %}
 issubclass(int, object)
-#>>> True
+>>> True
 def bar():
     pass
 
 bar.__class__
-#>>> <type 'function'>
+>>> <type 'function'>
 
 issubclass(bar.__class__, object)
-#>>> True
+>>> True
 {% endhighlight %}
 
 (Insert your favourite wow expression here)
@@ -84,9 +86,11 @@ def foo():
     bar()
     print(blob)
 foo()
+{% endhighlight %}
 
-#>>> Yo! Blob here
-#>>> Hi! I am a blob
+{% highlight text %}
+>>> Yo! Blob here
+>>> Hi! I am a blob
 {% endhighlight %}
 
 So functions behave exactly same as how variables behave. That's because behind the curtain they are actually same, Objects!
@@ -106,8 +110,10 @@ def here(basepath):
 
 usr = here('/usr')
 print(usr('bin', 'cal')) # 1
+{% endhighlight %}
 
-#>>> /usr/bin/cal
+{% highlight text %}
+>>> /usr/bin/cal
 {% endhighlight %}
 
 `here()` accepts a parameter called `basepath` and returns a function called `f` which joins paths using `os.path.join`. When `usr()` is used at #1, you might think that it'll give `NameError` but it doesn't. This is because python has a feature called _function closures_ which allows function non-global functions to preserve everything in their scope at definition time.
@@ -129,12 +135,14 @@ def printhello():
 
 printhello = repeat(printhello, times=5)
 printhello()
+{% endhighlight %}
 
-#>>> Hello
-#>>> Hello
-#>>> Hello
-#>>> Hello
-#>>> Hello
+{% highlight text %}
+>>> Hello
+>>> Hello
+>>> Hello
+>>> Hello
+>>> Hello
 {% endhighlight %}
 
 The `repeat()` takes 2 arguments, the first one is the function to be decorated and the second one is the number of times you want to repeat that function. `new_f()` is the new function that repeats `f()` `times` number of times. `times` is a named argument and is `3` by default
@@ -166,11 +174,13 @@ def echo():
     str = raw_input()
     print(str)
 echo()
+{% endhighlight %}
 
-#>>> Python
-#>>> Python
-#>>> Decorators
-#>>> Decorators
+{% highlight text %}
+>>> Python
+>>> Python
+>>> Decorators
+>>> Decorators
 {% endhighlight %}
 
 Let me sum that up for you in one line:
@@ -183,3 +193,82 @@ A little confusing, isn't it? That's why there is another way to do it.
 
 Decorators using Classes
 ------------------------
+
+Let's try rewriting the `repeat` decorator using a class.
+
+{% highlight python %}
+class repeat(object):
+
+    def __init__(self, func):
+        print('inside __init__')
+        self.times = 3
+        self.func = func
+
+    def __call__(self, person):
+        print('Inside __call__')
+        print('Calling function %d times' % self.times)
+        for x in range(self.times):
+            self.func(person)
+
+@repeat
+def greet(person):
+    print('Greetings %s!' % person)
+
+print('~~Calling greet~~')
+greet('Python User')
+{% endhighlight %}
+
+{% highlight text %}
+>>> inside __init__
+>>> ~~Calling greet~~
+>>> Inside __call__
+>>> Calling function 3 times
+>>> Greetings Python User!
+>>> Greetings Python User!
+>>> Greetings Python User!
+{% endhighlight %}
+
+As you can see here, the `repeat` class's `__init__` method is called at the time of function definitin and the `__call__` is called when the function is used. So `__call__` behaves like the new decorated function. The argumens of the function being decorated and `__call__` should be same, except the `self` of course.
+
+But wait, this is not a decorator with arguments! Well, no. The syntax of a decorator with arguments using class is again different from the one which doesn't accept any arguments. Let's take a look at the final repeat decorator.
+
+{% highlight python %}
+class repeat(object):
+
+    def __init__(self, times=1):
+        print('inside __init__')
+        self.times = times
+
+    def __call__(self, f):
+        print('Inside __call__')
+
+        def new_f(person):
+            for x in range(self.times):
+                f(person)
+        return new_f
+
+@repeat(5)
+def greet(person):
+    print('Greetings %s!' % person)
+
+print('~~Calling greet~~')
+greet('Guido')
+{% endhighlight %}
+
+{% highlight text %}
+>>> inside __init__
+>>> Inside __call__
+>>> ~~Calling greet~~
+>>> Greetings Guido!
+>>> Greetings Guido!
+>>> Greetings Guido!
+>>> Greetings Guido!
+>>> Greetings Guido!
+{% endhighlight %}
+
+So what's going on here? The `__init__` and `__call__` methods are called only at the time of definition and `__call__` returns `new_f`, the decorated function. `__init__` is used to take care of the argument and `__call__` is used to create the new function which is returned. Its very much like using function decorators, only a little more elegant.
+
+What's Next?
+------------
+
+If you're interested in reading more about decorators then go see a doctor! No, seriously, I mean it. And if that doesn't help, they you can try reading [Bruce Eckel](http://www.bruceeckel.com/)'s post: [A Decorator-Based Build System](http://www.artima.com/weblogs/viewpost.jsp?thread=241209). And don't forget to email me if you have any questions, suggestion or if you found a typo! Until next time, Bye!
