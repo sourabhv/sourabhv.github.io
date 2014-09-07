@@ -61,6 +61,7 @@ In python, functions are first class citizens. This means that the rules that ap
 {% highlight python %}
 issubclass(int, object)
 >>> True
+
 def bar():
     pass
 
@@ -73,9 +74,7 @@ issubclass(bar.__class__, object)
 
 (Insert your favourite wow expression here)
 
-So, object is a base class for all primary data types and functions. Actually,
-
-> Everything is an object in Python. Let me say that again, EVERYTHING!
+So, object is a base class for all primary data types and functions. Actually, Everything is an object in Python.
 
 {% highlight python %}
 def foo():
@@ -98,7 +97,7 @@ So functions behave exactly same as how variables behave. That's because behind 
 Closures
 --------
 
-What's a closure? Closure is a function that returns a function. There's not much to say about this except giving an example:
+A Closure is a function that returns a function. There's not much to say about this except giving an example:
 
 {% highlight python %}
 import os
