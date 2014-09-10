@@ -42,7 +42,10 @@ item:last-child {
     border-bottom: none;
 }
 
-item title, item link, item description {
+item title,
+item link,
+item description,
+item pubDate {
     margin: 15px 0;
 }
 
@@ -60,6 +63,6 @@ item description {
     font-size: 1.1em;
 }
 
-guid, content, pubDate {
+guid, content {
     display: none;
 }
