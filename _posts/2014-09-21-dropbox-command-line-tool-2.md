@@ -200,4 +200,51 @@ Downloading random_file to /home/sourabh/code/python/drp
 Sharing drp
 </pre>
 
+Great! Now all we have to do is use the handler we created in our `drp.py` file. Add `from .handler import DrpHandler`
+ which is an import with relative path. `.handler` here means handler module in the same directory as the `drp.py` file. I'm just adding new code and not the decorators from before so don't remove them.
 
+{% highlight python %}
+from .handler import DrpHandler
+
+#... some code here
+
+def up(path, file):
+    # ...
+    handler = DrpHandler()
+    handler.up(path, file)
+
+#... some code here
+def down(path, file):
+    # ...
+    handler = DrpHandler()
+    handler.down(path, file)
+
+#... some code here
+def share(file):
+    # ...
+    handler = DrpHandler()
+    url = handler.share(file)
+    print('Publci URL is %s' % url['url'])
+{% endhighlight %}
+
+Here we're just creating the handler object and using its methods. A test run would look like this:
+
+<pre class="terminal">
+<span class="d">$</span> ls ~/Dropbox/Apps/DDropper_base
+<span class="d">$</span> drp up setup.py
+<span class="d">$</span> ls ~/Dropbox/Apps/DDropper_base
+setup.py
+<span class="d">$</span> mkdir test
+<span class="d">$</span> drp down --path ./test setup.py
+<span class="d">$</span> ls test
+setup.py
+<span class="d">$</span> drp share setup.py
+Publci URL is https://db.tt/keRsSRyU
+</pre>
+
+Cool! So everything works!
+
+Where to go from here
+---------------------
+
+If you liked this 2 part tutorial, why don't you go and check out the official source code [here](http://github.com/sourabhv/drp) and go through the production code. We also left out a simple Issue for readers to fix. Hopefully someone fixes it soon :) So, thanks for reading. Leave a comment or mail me if you have any question/suggestion. Cya!
