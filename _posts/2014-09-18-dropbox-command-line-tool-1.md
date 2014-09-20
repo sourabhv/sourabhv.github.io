@@ -4,7 +4,7 @@ title: Dropbox Command Line Tool - 1
 description: Make a Dropbox command line tool using Click and Dropbox SDK
 ---
 
-Making a dropbox CLI tool is actually very simple once you have understanding of some basic python features, particularly _classes_, _decorators_ and also have a general idea of what an API is. We'll go over classes and we are not going to use decorators too much, so relax! (You can read about them [here](http://www.sourabhverma.com/posts/decorators-in-python/) if you want) So [read a little bit about what is an api](http://lmgtfy.com/?q=what+is+an+api) and then come back here. I'll be waiting...
+Making a dropbox CLI tool is actually very simple once you have understanding of some basic python features, particularly _classes_, _decorators_ and also have a general idea of what an API is. We'll go over classes and we are not going to use decorators too much, so relax! (You can read about them [here](/posts/decorators-in-python/) if you want) So [read a little bit about what is an api](http://lmgtfy.com/?q=what+is+an+api) and then come back here. I'll be waiting...
 
 Making a Dropbox App
 --------------------
@@ -60,12 +60,14 @@ Making the Dropbox Handler
 
 Before we start with making the command line interface, lets make the handler for dropbox, or the so called `DrpHandler`. Lets start by making a `drp` directory for our project. Inside this directory make a file called `setup.py` and a directory named `drp`. Inside the inner `drp` directory create 3 files called `handler.py`, `drp.py` and `__init__.py`. Now your project structure should look something like this:
 
-    drp
-    |-- drp
-    |   |-- __init__.py
-    |   |-- drp.py
-    |   `-- handler.py
-    `-- setup.py
+{% highlight text %}
+drp
+|-- drp
+|   |-- __init__.py
+|   |-- drp.py
+|   `-- handler.py
+`-- setup.py
+{% endhighlight %}
 
 - `__init__.py` tells python that the inner `drp` directory is a python library
 - `drp.py` handles command line interface using click
