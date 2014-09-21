@@ -1,3 +1,10 @@
+---
+layout: nil
+---
+
+{% include normalize.css %}
+{% include syntax.css %}
+
 /***** Google Fonts *****/
 
 @font-face {
