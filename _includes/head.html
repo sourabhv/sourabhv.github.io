@@ -18,7 +18,7 @@
 <link href="//sourabhverma.com/projects" rel="prerender">
 
 <!-- meta tags for SEO -->
-<meta name="description" content= "Hi! I am Sourabh Verma, a python fan, open-source contributer/supporter and comic lover.">
+{% if page.meta %}<meta name="description" content= "{{ page.meta }}">{% endif %}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1, minimal-ui" name= "viewport">
 

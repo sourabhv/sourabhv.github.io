@@ -3,4 +3,4 @@ descripton: My Blog
 url: http://www.sourabhverma.com
 markdown: redcarpet
 highlighter: pygments
-permalink: /posts/:title
+permalink: /posts/:title/
