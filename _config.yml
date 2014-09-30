@@ -4,11 +4,3 @@ url: http://www.sourabhverma.com
 markdown: redcarpet
 highlighter: pygments
 permalink: /posts/:title/
-sitemap:
-    exclude:
-        - "/feed.xml"
-        - "/css/main.css"
-    include_posts:
-        - "/index.html"
-        - "/about/index.html"
-        - "/projects/index.html"

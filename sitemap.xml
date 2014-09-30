@@ -1,0 +1,41 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        {% if post.lastmod %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% endif %}
+    </url>
+    {% endfor %}
+
+    <url>
+        <loc>http://www.sourabhverma.com/404.html</loc>
+        <lastmod>2014-03-01T00:00:00+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://www.sourabhverma.com/feed.xml</loc>
+        <lastmod>2014-03-01T00:00:00+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://www.sourabhverma.com/index.html</loc>
+        <lastmod>2014-03-01T00:00:00+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://www.sourabhverma.com/about/index.html</loc>
+        <lastmod>2014-03-01T00:00:00+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://www.sourabhverma.com/projects/index.html</loc>
+        <lastmod>2014-03-01T00:00:00+05:30</lastmod>
+    </url>
+</urlset>
