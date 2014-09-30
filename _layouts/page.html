@@ -1,8 +1,19 @@
----
-layout: default
----
-<h1 id="post-title">{{ page.title }}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body>
+    {% include header.html tag="h2" %}
 
-<div id="post-content">
-    {{ content }}
-</div>
+    <div id="main-content">
+        <h1 id="post-title">{{ page.title }}</h1>
+
+        <div id="post-content">
+            {{ content }}
+        </div>
+    </div>
+
+    {% include footer.html %}
+</body>
+</html>

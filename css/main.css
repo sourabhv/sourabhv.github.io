@@ -81,7 +81,7 @@ float: left;
   clear: both;
 }
 
-.nodisplay {
+.hidden {
   display: none;
 }
 
@@ -140,12 +140,14 @@ header a:hover {
   color: #0a5;
 }
 
-header h1 {
+header h1,
+header h2 {
   margin: 0;
   float: left;
 }
 
-header h1 a {
+header h1 a,
+header h2 a {
   font-size: 1em;
   font-size: 36px;
   font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
@@ -154,6 +156,7 @@ header h1 a {
   line-height: 100px;
 }
 
+header h2 a:hover,
 header h1 a:hover {
   border: none;
   color: #eee;
@@ -438,7 +441,7 @@ pre.terminal code {
     width: 49%;
     padding: 15px 0;
   }
-  #site-footer div .nodisplay {
+  #site-footer div .hidden {
     display: block;
   }
 }
