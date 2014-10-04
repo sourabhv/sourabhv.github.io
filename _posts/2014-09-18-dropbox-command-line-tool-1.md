@@ -9,7 +9,7 @@ Making a dropbox CLI tool is actually very simple once you have understanding of
 Making a Dropbox App
 --------------------
 
-- Head over to [https://www.dropbox.com/developers/apps](https://www.dropbox.com/developers/apps) and click `Create app`
+- Head over to [dropbox.com/developers/apps](https://www.dropbox.com/developers/apps) and click `Create app`
 - Select `Dropbox API app`
 - Select `Files and Datastores`
 - Select `Yes` in `Can your app be limited to its own folder?`

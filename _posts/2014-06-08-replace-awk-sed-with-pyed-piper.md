@@ -249,6 +249,6 @@ Wow! Now isn't that super clean. Much better than `awk` if you ask me.
 
 That's it for this post. But there's lot more interesting stuff in pyp. Here are some links for further reading. Thank you and Peace out!
 
-\[1\]: [https://code.google.com/p/pyp/wiki/intro](https://code.google.com/p/pyp/wiki/intro) <br>
-\[2\]: [https://code.google.com/p/pyp/wiki/basic_examples](https://code.google.com/p/pyp/wiki/basic_examples) <br>
-\[3\]: [https://code.google.com/p/pyp/wiki/pyp_manual](https://code.google.com/p/pyp/wiki/pyp_manual)
+- [Pyp Official Wiki: Intro](https://code.google.com/p/pyp/wiki/intro) <br>
+- [Pyp Official Wiki: Basic Examples](https://code.google.com/p/pyp/wiki/basic_examples) <br>
+- [Pyp Official Wiki: Manual](https://code.google.com/p/pyp/wiki/pyp_manual)

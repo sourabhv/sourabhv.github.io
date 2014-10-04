@@ -156,8 +156,8 @@ header h2 a {
   line-height: 100px;
 }
 
-header h2 a:hover,
-header h1 a:hover {
+header h1 a:hover,
+header h2 a:hover {
   border: none;
   color: #eee;
 }
@@ -185,7 +185,7 @@ header nav a {
 }
 
 .post {
-  margin: 40px 0;
+  margin: 30px 0;
   padding: 1px 0;
 }
 
@@ -196,6 +196,7 @@ header nav a {
 .post-title a {
   font: 30px 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   color: #29363D;
+  line-height: 1.3em;
 }
 
 .post-date {
@@ -224,6 +225,7 @@ header nav a {
 #post-title {
   margin: 60px 0 20px;
   font-size: 45px;
+  line-height: 1.3em;
 }
 
 #post-date {
@@ -290,6 +292,7 @@ font-weight: normal;
 
 #post-content li {
   margin: 10px 0;
+  line-height: 30px;
 }
 
 #post-content hr {
@@ -421,7 +424,8 @@ pre.terminal code {
 */
 
 @media (max-width: 720px) {
-  #site-header h1 a {
+  #site-header h1 a,
+  #site-header h2 a {
     font-size: 30px;
   }
   #post-title {
@@ -454,14 +458,15 @@ pre.terminal code {
     padding-top: 1px;
     padding-bottom: 1px;
   }
-  header nav, header h1 {
+  header nav, header h1, header h2 {
     margin: 35px 0;
     height: auto;
     float: none;
     text-align: center;
   }
-  header h1 a {
-    line-height: 35px;
+  header h1 a,
+  header h2 a {
+    line-height: 40px;
   }
   header nav a {
     line-height: 1em;
