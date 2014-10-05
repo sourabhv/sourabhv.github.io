@@ -4,13 +4,13 @@ title: Dropbox Command Line Tool - 2
 description: Make a Dropbox command line tool using Click and Dropbox SDK
 ---
 
-In this part, we will complete the drp tool by writing the command line interface using click and writing setup.py.
+In this part, we will complete the drp tool by writing the command line interface using click and setup.py.
 If you didn't read the [first part](/posts/dropbox-command-line-tool-1/), I suggest you read that first to understand this one better.
 
 Writing setup.py
 ----------------
 
-The `setup.py` file is used by the packaging system (`pip` in our case) to package the project, install any dependencies and and setup commmands, if any. It also includes details about the project like `author-name`, `version`, `email`, etc. We won't try to be too fancy here and add all of those and just enough to get things moving. You can always add more later. Open the `setup.py` file and enter the following into it.
+The `setup.py` file is used by the packaging system (`pip` in our case) to package the project, install any dependencies and setup commmands, if any. It also includes details about the project like `author-name`, `version`, `email`, etc. We won't try to be too fancy here and add only those fields which are necessary to make things work. You can always add more fields later. Open the `setup.py` file and enter the following code into it.
 
 {% highlight python %}
 from setuptools import setup
@@ -75,7 +75,7 @@ Hello, Dropbox
 
 ###Sub-commands
 
-Sub-commands are like commands under a command. The root command works like a namespace for them. For example, if you're ever used git, then you must've used its subcommands like `$ git push`, `$ git pull`, etc. We will make some similar subcommands for drp, namely `$ drp up`, `$ drp down` and `$ drp share`. Let's create those...
+Sub-commands are like commands under a command. The root command works like a namespace for them. For example, if you've ever used git, then you must've used its subcommands like `$ git push`, `$ git pull`, etc. We will make some similar subcommands for drp, namely `$ drp up`, `$ drp down` and `$ drp share`. Let's create those...
 
 {% highlight python %}
 import click
@@ -180,9 +180,9 @@ def share(file):
 
 An option is created using `@click.option()` decorator which takes in name of the option, preceeded by a **--** (`--path` here), an optional short flag (`-p` here), default value for path is `/` (root) for upload and `.` (current dir) for download.
 
-The `type` argument takes in type of input. It can be as simple as `str` or `int` or you can use click's inbuilt types which provide some extra functionality. We've used `click.Path()` which checks if path is a valid path ot not. You can pass `exists` which checks if the path actually exists or not and `resolve_path` which resolves any relative paths into absolute paths. The `help` argument is just a help string, nothing fancy there.
+The `type` argument takes in type of input. It can be as simple as `str` or `int` or you can use click's inbuilt types which provide some extra functionality. We've used `click.Path()` which checks if the path is a valid or not. You can pass `exists` which checks if the path actually exists or not and `resolve_path` which resolves any relative paths into absolute paths. The `help` argument is just a help string, nothing fancy there.
 
-An `argument` is created by `@click.argument()` decorator and it takes in name of the option, `nargs` number of arguments it will accept and `type`. `nargs` is the only new thing here and it can be 1, 2, 3 ... etc to accept 1 2 or 3 arguments, etc. `nargs=-1` means that it can accept any number of arguments, including 0. You can se it to minimum 1
+An `argument` is created by `@click.argument()` decorator and it takes in name of the option, `nargs` number of arguments it will accept and `type`. `nargs` is the only new thing here and it can be 1, 2, 3 ... etc to accept 1 2 or 3 arguments, etc. `nargs=-1` means that it can accept any number of arguments, including 0. You can set it to minimum 1
 by setting `required=True` along with `nargs=1`.
 
 Let's try it out:

@@ -51,7 +51,7 @@ except socket.timeout as e:
 
 Next we make a `try` block which is used to handle any exceptions. What's an exception? It's something thats generated when something goes wrong at runtime. It is almost always something that your program cannot control, like reading a file that doesn't exist or trying to connect to internet when there is no connection available. For there type of dangerous things we use exception handling. Anything that can go wrong goes in the `try` block and then if something actually goes wrong, it _throws an exception_ which is caught by one of the `except` blocks. Here, the first one will catch exceptions of type `dropbox.rest.ErrorResponse` which means that something went wrong while trying to connect to dropbox or at dropbox's end. The second one is `socket.timeout` exception which is thrown when a socket doesn't respond. In our case, when there's a connection timeout.
 
-Inside `try` we try to connect to Dropbox's using the OAUTH2 protocol, which is really simple. This code is given in dropbox's tutorial and you can use it as it is. In simple words, it connects to dropbox's server using OAUTH2 protocol and get a authorization URL using the app key and pp secret. Then on the page you click Allow which validates that the user is actually allowing the app to access dropbox. Its pretty much like when you connect to a website using your facebook account and click allow.
+Inside `try` we try to connect to Dropbox's using the OAUTH2 protocol, which is really simple. This code is given in dropbox's tutorial and you can use it as it is. In simple words, it connects to dropbox's server using OAUTH2 protocol and get an authorization URL using the `app key` and `app secret`. Then on the page you click Allow which validates that the user is actually allowing the app to access dropbox. Its pretty much like when you connect to a website using your facebook account and click allow.
 
 Get the access token and add it to your environment variables. On linux its as simple as adding `export ACCESS_TOKEN="..."` to your `~/.bashrc` file. For windows, [read this.](http://www.computerhope.com/issues/ch000549.htm)
 
@@ -85,7 +85,7 @@ class DrpHandler(object):
         pass
 {% endhighlight %}
 
-First we import 2 libraries, `os` and `dropbox`. Next we create a class called `DrpHandler`. The names inside `()` after class name is a comma separated list of parent classes for this class. The `object` here is implicit in python 3.x and thus can be removed, but we will keep it so that `DrpHandler` also inherits from `object` in python 2.x. The `__init__` method is like a constructor in Java. Every class methods accepts a `self` argument which is like this in other OO languages but is not a keyword. You can use me, myself or anything else but its recommended that you stick with the standards. Next we will add the 3 methods we want, namely `up`, `down` and share to upload, download and share a file respectively.
+First we import 2 libraries, `os` and `dropbox`. Next we create a class called `DrpHandler`. The names inside `()` after class name is a comma separated list of parent classes for this class. The `object` here is implicit in python 3.x and thus can be removed, but we will keep it so that `DrpHandler` also inherits from `object` in python 2.x. The `__init__` method is like a constructor in Java. Every class methods accepts a `self` argument which is like `this` in other Object Oriented languages but is not a keyword. You can use me, myself or anything else but I recommend that you stick with the standards. Next we will add the 3 methods we want, namely `up`, `down` and `share` to upload, download and share a file respectively.
 
 {% highlight python %}
 class DrpHandler(object):
@@ -120,7 +120,7 @@ class DrpHandler(object):
             echo(str(err))
 {% endhighlight %}
 
-Lets understand this one line at a time. I will skip over anything already discussed above. I will link to the documentation for any new functions used here. Go over their docs if you don't know what they do.
+Lets understand this one line at a time. I will skip over anything already discussed above and link to the documentation for any new functions used here. Go over their docs if you don't understand what they do.
 
 - **#1**: We create a class variable to get the `ACCESS_TOKEN` from environment variables. The `get` method returns the value if it finds the variable, or `None` otherwise.
 
@@ -130,9 +130,9 @@ Lets understand this one line at a time. I will skip over anything already discu
 
 - **#4**: Next we join the `path` to upload to and the file name to get absolute path for file on dropbox. We use `os.path`'s [join](https://docs.python.org/2/library/os.path.html#os.path.join) for this.
 
-- **#5**: Next we use `with` statement to handle and close the file. `with` has its own context manager which closes the file in case anything goes wrong and then throws back the exception. This means that if `dropbox.rest.ErrorResponse` exception occurs then the being read file will be closed safely and will not cause any inconsistencies. `open` function takes path to the file, relative or absolute, and mode which can be any one of `rb`, `wb`, `ab`, `r`, `w` and `a`. Here r, w, a, b means read, write, append and binary respectively. We open the file in `rb` mode to read it bit wise. Next we assign this file object to f using `as f`.
+- **#5**: Next we use `with` statement to handle and close the file. `with` has its own context manager which closes the file in case anything goes wrong and then throws back the exception. This means that if `dropbox.rest.ErrorResponse` exception occurs then the file being read will be closed safely and will not cause any inconsistencies. `open` function takes path to the file, relative or absolute, and mode which can be any one of `rb`, `wb`, `ab`, `r`, `w` and `a`. Here r, w, a, b means read, write, append and binary respectively. We open the file in `rb` mode to read it bit wise. Next we assign this file object to f using `as f`.
 
-- **#6**: self.client.[put_file](https://www.dropbox.com/developers/core/docs/python) is a  is a Dropbox API method to upload a file. It takes the file path and file object.
+- **#6**: self.client.[put_file](https://www.dropbox.com/developers/core/docs/python) is a Dropbox API method to upload a file. It takes the file path and file object.
 
 - **#7**: In `down` method, we get the `filename` from `file`, open the outfile in `wb` mode and infile from dropbox and write contents of in into out.
 
@@ -142,4 +142,4 @@ Lets understand this one line at a time. I will skip over anything already discu
 
 - **#10**: `share` method is really simple. We simply `self.client.share` with `path` of file and an optional `short_url=True` argument which returns the public URL of the file.
 
-That's it for this part of Dropbox Command Line Tool. We've written then dropbox handler and and next time we will write the command line handler and the setup.py file. Until then, bye!
+That's it for this part of Dropbox Command Line Tool. We've written the dropbox handler and next time we will write the command line handler and the setup.py file. Until then, bye!
