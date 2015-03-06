@@ -1,16 +1,36 @@
 ---
 layout: default
 meta: "Hi! I am Sourabh Verma, a python fan, open-source contributer/supporter and comic lover"
-lastmod: 2014-08-01T00:00:00+05:30
 ---
 
 <section class="posts">
-    {% for post in site.posts %}
+    {% for post in paginator.posts | sort %}
         <article class="post">
             <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="post-date">{{ post.date | date_to_string }}</p>
-            <p class="post-desc">{{ post.description }}</p>
-            <p class="post-link"><a href="{{ post.url }}">Continue reading &#187;</a></p>
+            <p class="post-date">{{ post.date | date:"%d %B %Y" }}</p>
+            <p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
         </article>
     {% endfor %}
 </section>
+
+{% if paginator.total_pages > 1 %}
+<div id="paginate">
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="left">&larr; Older Posts</a>
+    {% else %}
+        <span class="left invisible">&larr; Older Posts</span>
+    {% endif %}
+
+    <span>{{ paginator.page }} <span>of {{ paginator.total_pages }}</span></span>
+
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page_path contains 'index.html' %}
+            <a href="/" class="right">Newer Posts &rarr;</a>
+        {% else %}
+            <a href="{{ paginator.previous_page_path }}" class="right">Newer Posts &rarr;</a>
+        {% endif %}
+    {% else %}
+        <span class="right invisible">Newer Posts &rarr;</span>
+    {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,30 @@
+@primary: #1ABC9C;
+@black: #29363D;
+@gray: #666;
+@lightGray: #F7F9FA;
+
+.font-family-primary() {
+    font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+}
+
+.border-box() {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.transition(@value;) {
+    -webkit-transition: @value;
+       -moz-transition: @value;
+        -ms-transition: @value;
+         -o-transition: @value;
+            transition: @value;
+}
+
+.linear-gradient(@dir; @start; @mid; @end) {
+    background-image: -webkit-linear-gradient(@dir, @start, @mid, @end);
+    background-image:    -moz-linear-gradient(@dir, @start, @mid, @end);
+    background-image:     -ms-linear-gradient(@dir, @start, @mid, @end);
+    background-image:      -o-linear-gradient(@dir, @start, @mid, @end);
+    background-image:         linear-gradient(@dir, @start, @mid, @end);
+}

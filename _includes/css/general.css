@@ -1,0 +1,72 @@
+/*
+****************************************
+-------  Global Resets
+****************************************
+*/
+::-moz-selection {
+  background-color: #32D784;
+  color: #fff;
+}
+::selection {
+  background-color: #32D784;
+  color: #fff;
+}
+body {
+  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #29363d;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 1em 0;
+}
+body * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+p {
+  margin: 1em 0;
+}
+a {
+  text-decoration: none;
+  color: #1abc9c;
+}
+a:hover {
+  border-bottom: 1px solid #1abc9c;
+}
+a:visited {
+  color: #666666;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.invisible {
+  visibility: none;
+}
+.hidden {
+  display: none;
+}
+.gray {
+  color: #666;
+}
+.circular {
+  border-radius: 50%;
+}
+.center {
+  text-align: center;
+}

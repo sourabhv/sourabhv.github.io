@@ -1,0 +1,59 @@
+/*
+****************************************
+-------  Global Resets
+****************************************
+*/
+
+@import "mixins.less";
+
+::-moz-selection {
+    background-color: #32D784;
+    color: #fff;
+}
+
+::selection {
+    background-color: #32D784;
+    color: #fff;
+}
+
+body {
+    .font-family-primary;
+    font-size: 18px;
+    font-weight: normal;
+    color: @black;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .font-family-primary;
+    font-weight: normal;
+    margin: 1em 0;
+}
+
+body * {
+    .border-box;
+}
+
+p { margin: 1em 0; }
+
+a {
+    text-decoration: none;
+    color: @primary;
+
+    &:hover {
+        border-bottom: 1px solid @primary;
+    }
+
+    &:visited {
+        color: @gray;
+    }
+}
+
+.left       { float: left; }
+.right      { float: right; }
+.clear      { clear: both; }
+.invisible  { visibility: none; }
+.hidden     { display: none; }
+.gray       { color: #666; }
+.circular   { border-radius: 50%; }
+.center     { text-align: center; }

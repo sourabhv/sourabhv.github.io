@@ -1,0 +1,53 @@
+@import "mixins.less";
+
+#site-footer {
+    margin: 30px auto 0;
+    padding: 0 20px;
+    max-width: 720px;
+    width: 100%;
+    font-size: 1em;
+
+    @media (max-width: 720px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+footer a {
+    color: @primary;
+
+    &:visited {
+        color: @primary;
+    }
+
+    &:hover {
+        border: none;
+    }
+}
+
+#site-footer div {
+    border-top: 1px solid #ccc;
+
+    & a {
+        padding: 30px 0;
+        display: inline-block;
+        width: 24%;
+        text-align: center;
+
+        @media (max-width: 550px) {
+            width: 49%;
+            padding: 15px 0;
+        }
+    }
+
+    & .hidden {
+        @media (max-width: 550px) {
+            display: block;
+        }
+    }
+
+    @media (max-width: 550px) {
+        padding: 15px 0;
+    }
+}
+

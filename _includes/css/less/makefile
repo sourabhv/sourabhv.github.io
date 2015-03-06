@@ -1,4 +1,4 @@
-LESS_FILES = footer.less header.less main.less
+LESS_FILES = footer.less general.less header.less main.less
 CSS_FILES = $(LESS_FILES:.less=.css)
 
 %.css: %.less

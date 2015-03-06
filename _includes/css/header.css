@@ -1,0 +1,107 @@
+/* *********************** */
+/* ***** Header Area ***** */
+/* *********************** */
+header {
+  background-color: #29363D;
+  height: 100px;
+  border-bottom: 4px solid #1abc9c;
+}
+@media (max-width: 520px) {
+  header {
+    height: auto;
+  }
+}
+#site-header {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 720px;
+  width: 100%;
+}
+@media (max-width: 520px) {
+  #site-header {
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}
+header a {
+  text-decoration: none;
+  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #eee;
+  -webkit-transition: color 0.25s linear;
+  -moz-transition: color 0.25s linear;
+  -ms-transition: color 0.25s linear;
+  -o-transition: color 0.25s linear;
+  transition: color 0.25s linear;
+}
+header a:visited {
+  color: #eee;
+}
+header a:hover {
+  color: #1abc9c;
+  text-decoration: none;
+  border-bottom: none;
+}
+header h1,
+header h2 {
+  margin: 0;
+  float: left;
+}
+header h1 a,
+header h2 a {
+  font-size: 1em;
+  font-size: 36px;
+  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: normal;
+  line-height: 100px;
+}
+header h1 a:hover,
+header h2 a:hover {
+  border: none;
+  color: #eee;
+}
+@media (max-width: 720px) {
+  header h1 a,
+  header h2 a {
+    font-size: 30px;
+  }
+}
+@media (max-width: 520px) {
+  header h1 a,
+  header h2 a {
+    line-height: 40px;
+  }
+}
+@media (max-width: 520px) {
+  header h1,
+  header h2 {
+    margin: 35px 0;
+    height: auto;
+    float: none;
+    text-align: center;
+  }
+}
+header nav {
+  height: 100px;
+  float: right;
+}
+@media (max-width: 520px) {
+  header nav {
+    margin: 35px 0;
+    height: auto;
+    float: none;
+    text-align: center;
+  }
+}
+header nav a {
+  margin-right: 10px;
+  padding: 2px 4px;
+  line-height: 100px;
+}
+@media (max-width: 520px) {
+  header nav a {
+    line-height: 1em;
+    font-size: 14px;
+  }
+}
