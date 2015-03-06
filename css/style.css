@@ -2,24 +2,12 @@
 layout: none
 ---
 
-{% include normalize.css %}
-{% include syntax.css %}
-
-/***** Google Fonts *****/
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'FF Nexus Sans';
-  src: url('../fonts/FF Nexus Sans.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+{% include css/normalize.css %}
+{% include css/syntax.css %}
+{% include css/fonts.css %}
+{% include css/header.css %}
+{% include css/main.css %}
+{% include css/footer.css %}
 
 /*
 ****************************************

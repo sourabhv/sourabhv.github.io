@@ -1,29 +1,32 @@
+
 <!--
 
-   _____                        __    __       _    __
-  / ___/____  __  ___________ _/ /_  / /_     | |  / /__  _________ ___  ____ _
-  \__ \/ __ \/ / / / ___/ __ `/ __ \/ __ \    | | / / _ \/ ___/ __ `__ \/ __ `/
- ___/ / /_/ / /_/ / /  / /_/ / /_/ / / / /    | |/ /  __/ /  / / / / / / /_/ /
-/____/\____/\__,_/_/   \__,_/_.___/_/ /_/     |___/\___/_/  /_/ /_/ /_/\__,_/
-
+ /$$$$$$$                                               /$$
+| $$__  $$                                             | $$
+| $$  \ $$ /$$$$$$$ /$$   /$$  /$$$$$$$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$
+| $$$$$$$//$$_____/| $$  | $$ /$$_____/ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
+| $$____/|  $$$$$$ | $$  | $$| $$      | $$  \ $$| $$  | $$| $$$$$$$$| $$  \__/
+| $$      \____  $$| $$  | $$| $$      | $$  | $$| $$  | $$| $$_____/| $$
+| $$      /$$$$$$$/|  $$$$$$$|  $$$$$$$|  $$$$$$/|  $$$$$$$|  $$$$$$$| $$
+|__/     |_______/  \____  $$ \_______/ \______/  \_______/ \_______/|__/
+                    /$$  | $$
+                   |  $$$$$$/
+                    \______/
 
 -->
 
 <meta charset="utf-8">
-
-<title>{% if page.title %}{{ page.title }} | {% endif %}Sourabh Verma</title>
-
-<!-- prerender page for quick load -->
-<link href="//sourabhverma.com/projects" rel="prerender">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
 <!-- meta tags for SEO -->
-{% if page.meta %}<meta name="description" content= "{{ page.meta }}">{% endif %}
+{% if page.meta %}
+<meta name="description" content= "{{ page.meta }}">
+{% else %}
+<meta name="description" content= "{{ page.excerpt | strip_html | strip_newlines }}">
+{% endif %}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-
-<!-- CSS files -->
-<link rel="stylesheet" href="/css/main.css">
 
 <!-- favicons : generated using realfavicongenerator.net -->
 
@@ -44,3 +47,12 @@
 <meta name="msapplication-TileColor" content="#00aa55">
 <meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
 <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+
+<!-- CSS files -->
+<style type="text/css">
+    /* header and footer color styles */
+</style>
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- JS files -->
+<script src="/js/script.js"></script>

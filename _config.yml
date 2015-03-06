@@ -1,5 +1,11 @@
-name: Sourabh Verma
-url: http://www.sourabhverma.com
-markdown: redcarpet
+# Site Settings
+name: "Sourabh Verma"
+title: "Psycoder"
+url: http://www.psycoder.me
+permalink: /:title/
+paginate: 10
+paginate_path: "/:num/"
+
+# Build Settings
+markdown: kramdown
 highlighter: pygments
-permalink: /posts/:title/
