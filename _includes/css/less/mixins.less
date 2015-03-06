@@ -1,4 +1,9 @@
+// @primary: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[0] }}{% else %}#1ABC9C{% endif %}');
+// @primaryDark: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[1] }}{% else %}#1ABC9C{% endif %}');
+// @primaryDarker: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[2] }}{% else %}#1ABC9C{% endif %}');
 @primary: #1ABC9C;
+@primaryDark: #1ABC9C;
+@primaryDarker: #1ABC9C;
 @black: #29363D;
 @gray: #666;
 @lightGray: #F7F9FA;
