@@ -6,11 +6,11 @@ title: Tags
 {% for data in site.tags %}
     {% capture tag %}{{ data | first }}{% endcapture %}
     <!-- keep these classes if you are using top_tags.html -->
-    <h2>{{ tag }}</h2>
-    <ul>
+    <h3>{{ tag | capitalize }}</h3>
+    <ul class="tags">
         {% for post in site.tags[tag] %}
             <li>
-                <span>{{ post.date | date: '%b %Y' }}</span>
+                <span>{{ post.date | date: '%b %Y' }}</span> |
                 <a href="{{ post.url }}">{{ post.title }}</a>
             </li>
         {% endfor %}

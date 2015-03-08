@@ -2,6 +2,7 @@
 layout: post
 title: Dropbox Command Line Tool - 2
 description: Make a Dropbox command line tool using Click and Dropbox SDK
+tags: dropbox cli python
 ---
 
 In this part, we will complete the drp tool by writing the command line interface using click and setup.py.

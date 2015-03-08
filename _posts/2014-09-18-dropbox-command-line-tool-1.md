@@ -2,6 +2,7 @@
 layout: post
 title: Dropbox Command Line Tool - 1
 description: Make a Dropbox command line tool using Click and Dropbox SDK
+tags: dropbox cli python
 ---
 
 Making a dropbox CLI tool is actually very simple once you have understanding of some basic python features, particularly _classes_, _decorators_ and also have a general idea of what an API is. We'll go over classes and we are not going to use decorators too much, so relax! (You can read about them [here](/posts/decorators-in-python/) if you want) So [read a little bit about what is an api](http://lmgtfy.com/?q=what+is+an+api) and then come back here. I'll be waiting...

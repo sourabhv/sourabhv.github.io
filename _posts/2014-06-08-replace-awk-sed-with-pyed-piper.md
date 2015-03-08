@@ -2,6 +2,7 @@
 layout: post
 title: Replace Awk/Sed with The Pyed Piper
 description: Pyed Piper (pyp) is a great command line text manipulation utility build over python
+tags: awk sed python pyp cli
 ---
 
 We all use `awk` for complex text-manipulation. But lets admit it, awk is not the most readable command out there. I, infact, find it a little bit ugly. I mean, just look at it ...

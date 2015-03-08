@@ -2,6 +2,7 @@
 layout: post
 title: Anonymous Recursion in Python
 description: Self-Invoking Anonymous Recursion in Python using lambda functions and Combinators
+tags: python combinators lambda
 ---
 
 Wait, anonymous recursion? In python? Do things like this exist in the pythoniverse? (it'll be a thing one day, just wait for it). Not directly but we can use some supernatural mathematical logic to create it.

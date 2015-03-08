@@ -154,6 +154,16 @@ ol {
 .archive a:hover {
   color: #29363d !important;
 }
+/* *************************** */
+/* *****       Tags      ***** */
+/* *************************** */
+.tags span {
+  display: inline-block;
+  width: 90px;
+}
+.tags a:hover {
+  color: #29363d !important;
+}
 /*
 ****************************************
 -------  Code Blocks

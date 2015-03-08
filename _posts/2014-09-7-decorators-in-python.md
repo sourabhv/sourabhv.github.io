@@ -2,6 +2,7 @@
 layout: post
 title: Decorators in Python
 description: A gist of decorators in Python and how to create your own
+tags: python decorators
 ---
 
 Decorators can be confusing. That cool syntax with those awesome names that do stuff for you in ways you don't really understand, but always working for you, anonymously, secretly! Wait, what were we talking about? Oh yeah, Decorators! Let's break down the puzzle step by step. If you get stuck anywhere, feel free to email me.
