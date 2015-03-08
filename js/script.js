@@ -6,5 +6,5 @@ layout: none
 {% include js/jquery.min.js %}
 
 (function () {
-    // insert js here
+
 }) ();

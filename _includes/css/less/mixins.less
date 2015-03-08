@@ -1,35 +1,34 @@
-// @primary: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[0] }}{% else %}#1ABC9C{% endif %}');
-// @primaryDark: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[1] }}{% else %}#1ABC9C{% endif %}');
-// @primaryDarker: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[2] }}{% else %}#1ABC9C{% endif %}');
-@primary: #1ABC9C;
-@primaryDark: #1ABC9C;
-@primaryDarker: #1ABC9C;
+// @primary: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[0] }}{% else %}#1DD7B2{% endif %}');
+// @primaryLight: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[1] }}{% else %}#39E4C2{% endif %}');
+// @primaryDark: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[2] }}{% else %}#1AC19F{% endif %}');
+
+@primary: #1DD7B2;
+@primaryLight: lighten(@primary, 8%);
+@primaryDark: darken(@primary, 5%);
+@white: #eee;
 @black: #29363D;
 @gray: #666;
 @lightGray: #F7F9FA;
+@headerHeight: 500px;
 
 .font-family-primary() {
     font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
 }
 
-.border-box() {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+.psyco-text-shadow(@color; @counter; @step) when (@counter > 0) {
+    text-shadow+: (@counter *  1px) (@counter *  1px) 0 @color,
+                  (@counter * -1px) (@counter * -1px) 0 @color,
+                  (@counter *  1px) (@counter * -1px) 0 @color,
+                  (@counter * -1px) (@counter *  1px) 0 @color;
+    .psyco-text-shadow(darken(@color, 2%), (@counter - @step), @step);
 }
 
-.transition(@value;) {
-    -webkit-transition: @value;
-       -moz-transition: @value;
-        -ms-transition: @value;
-         -o-transition: @value;
-            transition: @value;
+.psyco-box-shadow(@color1: @primary; @color2: @white; @case: 0; @counter: 100; @step: 10) when (@counter > 0) and (@case = 0) {
+    box-shadow+: 0 0 0 (@counter * 1px) @color1;
+    .psyco-box-shadow(@color1, @color2, 1, @counter - @step, @step);
 }
 
-.linear-gradient(@dir; @start; @mid; @end) {
-    background-image: -webkit-linear-gradient(@dir, @start, @mid, @end);
-    background-image:    -moz-linear-gradient(@dir, @start, @mid, @end);
-    background-image:     -ms-linear-gradient(@dir, @start, @mid, @end);
-    background-image:      -o-linear-gradient(@dir, @start, @mid, @end);
-    background-image:         linear-gradient(@dir, @start, @mid, @end);
+.psyco-box-shadow(@color1: @primary; @color2: @white; @case: 0; @counter: 100; @step: 10) when (@counter > 0) and (@case = 1) {
+    box-shadow+: 0 0 0 (@counter * 1px) @color1;
+    .psyco-box-shadow(@color1, @color2, 0, @counter - @step, @step);
 }

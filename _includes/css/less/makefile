@@ -3,5 +3,6 @@ CSS_FILES = $(LESS_FILES:.less=.css)
 
 %.css: %.less
 	lessc $< > ../$@
+	autoprefixer ../$@
 
 all: $(CSS_FILES)

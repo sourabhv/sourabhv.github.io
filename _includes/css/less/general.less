@@ -6,15 +6,15 @@
 
 @import "mixins.less";
 
-::-moz-selection {
-    background-color: @primary;
-    color: #fff;
-}
+// ::-moz-selection {
+//     background-color: @primary;
+//     color: #fff;
+// }
 
-::selection {
-    background-color: @primary;
-    color: #fff;
-}
+// ::selection {
+//     background-color: @primary;
+//     color: #fff;
+// }
 
 body {
     .font-family-primary;
@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body * {
-    .border-box;
+    box-sizing: border-box;
 }
 
 p { margin: 1em 0; }

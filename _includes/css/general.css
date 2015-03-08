@@ -3,14 +3,6 @@
 -------  Global Resets
 ****************************************
 */
-::-moz-selection {
-  background-color: #32D784;
-  color: #fff;
-}
-::selection {
-  background-color: #32D784;
-  color: #fff;
-}
 body {
   font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -29,8 +21,6 @@ h6 {
   margin: 1em 0;
 }
 body * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 p {
@@ -38,10 +28,10 @@ p {
 }
 a {
   text-decoration: none;
-  color: #1abc9c;
+  color: #1dd7b2;
 }
 a:hover {
-  border-bottom: 1px solid #1abc9c;
+  border-bottom: 1px solid #1dd7b2;
 }
 a:visited {
   color: #666666;

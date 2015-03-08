@@ -8,6 +8,7 @@ meta: "Hi! I am Sourabh Verma, a python fan, open-source contributer/supporter a
         <article class="post">
             <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p class="post-date">{{ post.date | date:"%d %B %Y" }}</p>
+            <p class="post-desc">{{ post.description }}</p>
             <p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
         </article>
     {% endfor %}
