@@ -16,7 +16,7 @@
   margin: 20px 0;
 }
 .post-title a {
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 30px;
   color: #1dd7b2;
   line-height: 1.3em;
@@ -46,7 +46,7 @@
   margin: 60px 0 20px;
   font-size: 45px;
   line-height: 1.3em;
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
 }
 @media (max-width: 720px) {
   #post-title {
@@ -55,17 +55,17 @@
 }
 #post-date {
   margin: 20px 0 60px;
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #666666;
 }
 #post-content h2 {
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 30px;
 }
 #post-content h3 {
   margin: 1.3em 0;
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: normal;
 }
@@ -138,6 +138,21 @@ ol {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
   line-height: 20px;
+}
+/* *************************** */
+/* *****     Archive     ***** */
+/* *************************** */
+.archive {
+  list-style: none;
+}
+.archive span {
+  display: inline-block;
+  width: 50px;
+  font-weight: bold;
+  color: #1dd7b2;
+}
+.archive a:hover {
+  color: #29363d !important;
 }
 /*
 ****************************************

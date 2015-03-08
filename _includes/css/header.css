@@ -62,7 +62,7 @@ header a:hover {
   font-size: 145px;
   font-weight: normal;
   line-height: 500px;
-  color: #eeeeee;
+  color: #f9f9f9;
   overflow-y: hidden;
 }
 #site-header a span {
@@ -108,30 +108,31 @@ header nav a {
   display: inline-block;
   width: 100px;
   height: 100px;
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   text-align: center;
   vertical-align: bottom;
   line-height: 100px;
   -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out;
           transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out;
-  color: #eeeeee;
+  color: #f9f9f9;
   border-radius: 0;
 }
 header nav a:visited {
-  color: #eeeeee;
+  color: #f9f9f9;
 }
 header nav a:hover {
   border-radius: 100%;
-  background-color: #eeeeee;
+  background-color: #f9f9f9;
   color: #1dd7b2;
 }
 @media (max-width: 480px) {
   header nav a {
-    padding: 10px 30px 5px;
+    padding: 10px 30px;
     width: auto;
     height: auto;
     line-height: 1.3em;
+    margin: 10px 0;
   }
   header nav a:hover {
     border-radius: 3px;

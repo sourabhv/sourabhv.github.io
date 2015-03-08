@@ -21,7 +21,7 @@
     margin: 20px 0;
 
     & a {
-        .font-family-secondary;
+        .font-family-primary;
         font-size: 30px;
         color: @primary;
         line-height: 1.3em;
@@ -59,7 +59,7 @@
     margin: 60px 0 20px;
     font-size: 45px;
     line-height: 1.3em;
-    .font-family-secondary;
+    .font-family-primary;
 
     @media (max-width: 720px) {
         font-size: 35px;
@@ -68,19 +68,19 @@
 
 #post-date {
     margin: 20px 0 60px;
-    .font-family-secondary;
+    .font-family-primary;
     font-size: 16px;
     color: @gray;
 }
 
 #post-content h2 {
-    .font-family-secondary;
+    .font-family-primary;
     font-size: 30px
 }
 
 #post-content h3 {
     margin: 1.3em 0;
-    .font-family-secondary;
+    .font-family-primary;
     font-size: 24px;
     font-weight: normal;
 }
@@ -167,6 +167,25 @@
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
     line-height: 20px;
+}
+
+/* *************************** */
+/* *****     Archive     ***** */
+/* *************************** */
+
+.archive {
+    list-style: none;
+}
+
+.archive span {
+    display: inline-block;
+    width: 50px;
+    font-weight: bold;
+    color: @primary;
+}
+
+.archive a:hover {
+    color: @black !important; // to overcome #post-content a:hover
 }
 
 /*
