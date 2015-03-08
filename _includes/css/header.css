@@ -40,11 +40,6 @@ header a:hover {
   text-decoration: none;
   border: none;
 }
-@media (max-width: 950px) {
-  header {
-    height: 300px;
-  }
-}
 @media (max-width: 720px) {
   header {
     height: auto;
@@ -63,7 +58,7 @@ header a:hover {
   text-align: center;
 }
 #site-header a {
-  font-family: "Bree Serif";
+  font-family: 'Bree Serif', Garamond, serif;
   font-size: 145px;
   font-weight: normal;
   line-height: 500px;
@@ -86,7 +81,6 @@ header a:hover {
 @media (max-width: 950px) {
   #site-header a {
     font-size: 100px;
-    line-height: 300px;
   }
 }
 @media (max-width: 720px) {
@@ -114,6 +108,7 @@ header nav a {
   display: inline-block;
   width: 100px;
   height: 100px;
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   text-align: center;
   vertical-align: bottom;

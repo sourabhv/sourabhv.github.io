@@ -4,7 +4,7 @@
 ****************************************
 */
 body {
-  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: normal;
   color: #29363d;
@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 1em 0;
 }
