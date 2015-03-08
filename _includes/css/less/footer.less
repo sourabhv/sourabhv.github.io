@@ -1,8 +1,51 @@
 @import "mixins.less";
 
+footer {
+    position: relative;
+    margin-top: 80px;
+    background: linear-gradient(45deg, @primaryLight, @primaryDark) @primary;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.23), 0 -10px 40px rgba(0, 0, 0, 0.19);
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 80%; width: 110%;
+        left: -5%; top: 0;
+    }
+
+    &:before {
+        background-color: darken(@primary, 7);
+        top: -25px;
+        z-index: -50;
+        transform: rotate(-2deg);
+        box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.23), 0 -3px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    &:after {
+        background-color: darken(@primary, 10);
+        top: -50px;
+        z-index: -100;
+        transform: rotate(1deg);
+        box-shadow: 0 -1.5px 4px rgba(0, 0, 0, 0.24), 0 -1.5px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    & a {
+        color: @white;
+
+        &:visited {
+            color: @white;
+        }
+
+        &:hover {
+            border: none;
+        }
+    }
+}
+
 #site-footer {
-    margin: 30px auto 0;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 25px 20px 10px;
     max-width: 720px;
     width: 100%;
     font-size: 1em;
@@ -11,23 +54,13 @@
         padding-left: 0;
         padding-right: 0;
     }
-}
 
-footer a {
-    color: @primary;
-
-    &:visited {
-        color: @primary;
-    }
-
-    &:hover {
-        border: none;
+    @media (max-width: 550px) {
+        padding: 5px 20px 0;
     }
 }
 
 #site-footer div {
-    border-top: 1px solid #ccc;
-
     & a {
         padding: 30px 0;
         display: inline-block;
