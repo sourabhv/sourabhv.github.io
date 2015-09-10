@@ -8,34 +8,6 @@ header {
   background: linear-gradient(45deg, #39e4c2, #1ac19f) #1dd7b2;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
 }
-header:before,
-header:after {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 110%;
-  left: -5%;
-  bottom: 0;
-}
-header:before {
-  background-color: #19b898;
-  bottom: -25px;
-  z-index: -50;
-  -webkit-transform: rotate(2deg);
-      -ms-transform: rotate(2deg);
-          transform: rotate(2deg);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
-}
-header:after {
-  background-color: #17aa8d;
-  bottom: -50px;
-  z-index: -100;
-  -webkit-transform: rotate(-1deg);
-      -ms-transform: rotate(-1deg);
-          transform: rotate(-1deg);
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-}
 header a:hover {
   text-decoration: none;
   border: none;
