@@ -7,32 +7,33 @@
 header {
     position: relative;
     height: @headerHeight;
-    background: linear-gradient(45deg, @primaryLight, @primaryDark) @primary;
+    // background: linear-gradient(45deg, @primaryLight, @primaryDark) @primary;
+    background: @primary left top / cover no-repeat;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
 
-    &:before, &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 100%; width: 110%;
-        left: -5%; bottom: 0;
-    }
+    // &:before, &:after {
+    //     content: '';
+    //     display: block;
+    //     position: absolute;
+    //     height: 100%; width: 110%;
+    //     left: -5%; bottom: 0;
+    // }
 
-    &:before {
-        background-color: darken(@primary, 7);
-        bottom: -25px;
-        z-index: -50;
-        transform: rotate(2deg);
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
-    }
+    // &:before {
+    //     background-color: darken(@primary, 7);
+    //     bottom: -25px;
+    //     z-index: -50;
+    //     transform: rotate(2deg);
+    //     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+    // }
 
-    &:after {
-        background-color: darken(@primary, 10);
-        bottom: -50px;
-        z-index: -100;
-        transform: rotate(-1deg);
-        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-    }
+    // &:after {
+    //     background-color: darken(@primary, 10);
+    //     bottom: -50px;
+    //     z-index: -100;
+    //     transform: rotate(-1deg);
+    //     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    // }
 
     & a:hover {
         text-decoration: none;
@@ -54,6 +55,7 @@ header {
     margin: 0;
     padding: 0;
     text-align: center;
+    text-shadow: 0 0 15px rgba(0, 0, 0, .3);
 
     & a {
         font-family: 'Bree Serif', Garamond, serif;
@@ -109,9 +111,10 @@ header nav {
         text-align: center;
         vertical-align: bottom;
         line-height: 100px;
-        transition: color .25s ease-in-out, background-color .25s ease-in-out, border-radius .25s ease-in-out;
+        transition: color .25s ease-in-out, background-color .25s ease-in-out, border-radius .25s ease-in-out, text-shadow 0.25s ease-in-out;
         color: @white;
         border-radius: 0;
+        text-shadow: 0 0 6px rgba(0, 0, 0, .8);
 
         &:visited {
             color: @white;
@@ -121,6 +124,7 @@ header nav {
             border-radius: 100%;
             background-color: @white;
             color: @primary;
+            text-shadow: none;
         }
 
         @media (max-width: 480px) {

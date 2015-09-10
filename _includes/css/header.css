@@ -4,8 +4,7 @@
 header {
   position: relative;
   height: 500px;
-  background: -webkit-linear-gradient(45deg, #39e4c2, #1ac19f) #1dd7b2;
-  background: linear-gradient(45deg, #39e4c2, #1ac19f) #1dd7b2;
+  background: #666666 left top / cover no-repeat;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
 }
 header a:hover {
@@ -28,6 +27,7 @@ header a:hover {
   margin: 0;
   padding: 0;
   text-align: center;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 #site-header a {
   font-family: 'Bree Serif', Garamond, serif;
@@ -85,10 +85,11 @@ header nav a {
   text-align: center;
   vertical-align: bottom;
   line-height: 100px;
-  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out;
-          transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+          transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
   color: #f9f9f9;
   border-radius: 0;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 }
 header nav a:visited {
   color: #f9f9f9;
@@ -96,7 +97,8 @@ header nav a:visited {
 header nav a:hover {
   border-radius: 100%;
   background-color: #f9f9f9;
-  color: #1dd7b2;
+  color: #666666;
+  text-shadow: none;
 }
 @media (max-width: 480px) {
   header nav a {

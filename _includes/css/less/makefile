@@ -3,6 +3,6 @@ CSS_FILES = $(LESS_FILES:.less=.css)
 
 %.css: %.less
 	lessc $< > ../$@
-	autoprefixer ../$@
+	postcss --use autoprefixer ../$@ -o ../$@
 
 all: $(CSS_FILES)

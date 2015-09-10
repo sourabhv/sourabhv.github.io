@@ -28,10 +28,10 @@ p {
 }
 a {
   text-decoration: none;
-  color: #1dd7b2;
+  color: #666666;
 }
 a:hover {
-  border-bottom: 1px solid #1dd7b2;
+  border-bottom: 1px solid #666666;
 }
 a:visited {
   color: #666666;

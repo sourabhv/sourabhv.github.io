@@ -2,7 +2,7 @@
 // @primaryLight: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[1] }}{% else %}#39E4C2{% endif %}');
 // @primaryDark: e('{% if page.colors %}{% assign colors = page.colors | split:' ' %}{{ colors[2] }}{% else %}#1AC19F{% endif %}');
 
-@primary: #1DD7B2;
+@primary: #666666;
 @primaryLight: lighten(@primary, 8%);
 @primaryDark: darken(@primary, 5%);
 @white: #F9F9F9;
@@ -13,6 +13,10 @@
 
 .font-family-primary() {
     font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+}
+
+.font-family-title() {
+    font-family: 'Bree Serif', Garamond, serif;
 }
 
 .psyco-text-shadow(@color; @counter; @step) when (@counter > 0) {

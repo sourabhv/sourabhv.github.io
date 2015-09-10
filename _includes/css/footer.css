@@ -1,18 +1,21 @@
 footer {
   position: relative;
-  margin-top: 00px;
-  background: -webkit-linear-gradient(45deg, #39e4c2, #1ac19f) #1dd7b2;
-  background: linear-gradient(45deg, #39e4c2, #1ac19f) #1dd7b2;
+  margin-top: 80px;
+  background: #666666 left top / cover no-repeat;
   box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.23), 0 -10px 40px rgba(0, 0, 0, 0.19);
 }
 footer a {
   color: #f9f9f9;
+  -webkit-transition: text-shadow 0.25s ease-in-out;
+  transition: text-shadow 0.25s ease-in-out;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 }
 footer a:visited {
   color: #f9f9f9;
 }
 footer a:hover {
   border: none;
+  text-shadow: none;
 }
 #site-footer {
   margin: 0 auto;
