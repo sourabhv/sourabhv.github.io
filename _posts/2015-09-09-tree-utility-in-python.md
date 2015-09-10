@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Tree utility in Python
-description: Porting a simpler version of the famous *nix tree utility in Python
+description: Tree utility written in Python
 ---
 
-Porting the famous *nix tree utility in Python, a simpler version of it i.e.
+I ported a simpler version of the famous *nix tree utility in Python for my `drp` project. It might be usefull for someone in snippet form, so here it is.
 
 This has been in my drafts for far too long so I'll skip all the content writing and post the code, here it is:
 
@@ -68,7 +68,7 @@ def tree(path, depth=1, max_depth=10, show_hidden=False, pad_info=[]):
 
 Running it on this blog's repo gives:
 
-{% highlight %}
+{% highlight text %}
 >> tree('/Users/sourabh/Code/blog/sourabhv.github.io', max_depth=2)
 |-- 404.html
 |-- _config.yml
