@@ -33,17 +33,20 @@
 }
 
 .post-date {
+    .font-family-body;
     color: @gray;
     font-size: 15px;
 }
 
 .post-desc {
+    .font-family-body;
     margin: 20px 0;
     font-size: 18px;
     line-height: 30px;
 }
 
 .post-link a {
+    .font-family-body;
     color: @primary;
 
     &:hover {
@@ -68,25 +71,28 @@
 
 #post-date {
     margin: 20px 0 60px;
-    .font-family-primary;
+    .font-family-body;
     font-size: 16px;
     color: @gray;
 }
 
 #post-content h2 {
-    .font-family-primary;
-    font-size: 30px
+    .font-family-title;
+    font-size: 30px;
+    color: @gray;
 }
 
 #post-content h3 {
     margin: 1.3em 0;
-    .font-family-primary;
-    font-size: 24px;
+    .font-family-title;
+    font-size: 22px;
     font-weight: normal;
+    color: @gray;
 }
 
 #post-content a {
     color: @primary;
+    .font-family-body;
     text-decoration: none;
 
     &:visited {
@@ -100,6 +106,7 @@
 }
 
 #post-content p {
+    .font-family-body;
     margin: 30px 0;
     font-size: 18px;
     line-height: 32px;
@@ -114,7 +121,7 @@
     & p {
         margin: 10px 0;
         color: @gray;
-        font-family: 'Lato';
+        .font-family-title;
 
         &:first-child {
             margin-top: 0;

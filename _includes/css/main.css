@@ -25,15 +25,18 @@
   border: none;
 }
 .post-date {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   color: #666666;
   font-size: 15px;
 }
 .post-desc {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   margin: 20px 0;
   font-size: 18px;
   line-height: 30px;
 }
 .post-link a {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   color: #666666;
 }
 .post-link a:hover {
@@ -55,22 +58,25 @@
 }
 #post-date {
   margin: 20px 0 60px;
-  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #666666;
 }
 #post-content h2 {
-  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Bree Serif', Garamond, serif;
   font-size: 30px;
+  color: #666666;
 }
 #post-content h3 {
   margin: 1.3em 0;
-  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
-  font-size: 24px;
+  font-family: 'Bree Serif', Garamond, serif;
+  font-size: 22px;
   font-weight: normal;
+  color: #666666;
 }
 #post-content a {
   color: #666666;
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   text-decoration: none;
 }
 #post-content a:visited {
@@ -81,6 +87,7 @@
   border-bottom: 1px dotted #666666;
 }
 #post-content p {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
   margin: 30px 0;
   font-size: 18px;
   line-height: 32px;
@@ -94,7 +101,7 @@
 #post-content blockquote p {
   margin: 10px 0;
   color: #666666;
-  font-family: 'Lato';
+  font-family: 'Bree Serif', Garamond, serif;
 }
 #post-content blockquote p:first-child {
   margin-top: 0;

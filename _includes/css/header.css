@@ -63,8 +63,11 @@ header a:hover {
 }
 @media (max-width: 480px) {
   #site-header a {
-    font-size: 70px;
+    font-size: 60px;
     line-height: 150px;
+  }
+  #site-header a:hover span {
+    max-width: 0;
   }
 }
 header nav {
@@ -80,13 +83,14 @@ header nav a {
   display: inline-block;
   width: 100px;
   height: 100px;
-  font-family: 'Quicksand', 'Lato', 'FF Nexus Sans', Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
+  font-family: 'Bree Serif', Garamond, serif;
+  font-size: 1.2em;
+  letter-spacing: 1.5px;
   text-align: center;
   vertical-align: bottom;
   line-height: 100px;
-  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
-          transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-radius 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+          transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
   color: #f9f9f9;
   border-radius: 0;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
